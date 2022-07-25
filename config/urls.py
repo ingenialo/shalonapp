@@ -19,3 +19,10 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+
+print('imprimiendo_desde_la_url')
+
+from django.conf import settings
+print(settings.BASE_DIR)
+# print()
