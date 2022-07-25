@@ -22,7 +22,8 @@ urlpatterns = [
 
 
 print('imprimiendo_desde_la_url')
+print('holi')
 
-from django.conf import settings
-print(settings.BASE_DIR)
-# print()
+# from django.conf import settings
+# print(base.BASE_DIR)
+# # print()
