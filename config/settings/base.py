@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'host': os.getenv('SHALON_DB_HOST'),
+            # 'port': os.getenv('ORIANA_DB_PORT'),
+            'database' : os.getenv('SHALON_DB_NAME'),
+            'user' : os.getenv('SHALON_DB_USER'),
+            'password' : os.getenv('SHALON_DB_PASSWORD'),
+        },
     }
 }
 
