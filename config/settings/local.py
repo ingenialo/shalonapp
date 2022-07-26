@@ -5,7 +5,7 @@ from .base import *
 LOCAL_CDN = False 
 
 STATICFILES_DIRS = [
-    os.path.join("app-ui","dist")
+    # os.path.join("app-ui","dist")
 ]
 
 # Celery
