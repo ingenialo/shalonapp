@@ -24,5 +24,5 @@ example:
 ``` docker-compose run --rm django python manage.py createsuperuser ```
 ``` docker-compose run --rm django python manage.py migrate ```
 
-- How to get in to the conatainer by ssh
+- How to get in to the container by ssh
 ``` docker-compose exec django /bin/sh ```
