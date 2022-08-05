@@ -15,6 +15,6 @@ class Bookings(models.Model):
     provider = models.CharField(max_length=200, null=True)
     status = models.CharField(max_length=200, null=True)
     receipt_id = models.IntegerField(null=True)
-    start = models.DateTimeField(max_length=200)
-    end = models.DateTimeField(max_length=200)
+    start = models.DateTimeField(auto_now_add=True)
+    end = models.DateTimeField(auto_now=True)
     
