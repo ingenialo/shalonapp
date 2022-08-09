@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from bookings.models import Bookings
+from bookings.models import Booking
 
 
 
-@admin.register(Bookings)
+@admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
 

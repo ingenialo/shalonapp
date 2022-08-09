@@ -2,7 +2,7 @@ from django.db import models
 
 
 
-class Bookings(models.Model):
+class Booking(models.Model):
     
     
     web_origin = models.CharField(max_length=200, blank=True, null=True)

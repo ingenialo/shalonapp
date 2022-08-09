@@ -6,9 +6,7 @@ from clients.models import Clients
 
 
 @admin.register(Clients)
-
-
-class ClientsAdmin(admin.ModelAdmin):
+class ClientAdmin(admin.ModelAdmin):
     pass 
     
   
