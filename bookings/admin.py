@@ -11,6 +11,7 @@ class BookingAdmin(admin.ModelAdmin):
 # Register your models here.
     list_display = (
         'pk', 
+        'Payment',
         'web_origin', 
         'is_session_booked', 
         'receipt_id', 

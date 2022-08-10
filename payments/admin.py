@@ -11,7 +11,7 @@ class PaymentAdmin(admin.ModelAdmin):
 
 # Register your models here.
     list_display = (
-        'pk', 
+        # 'pk', 
         'payment_date', 
         'location_id', 
         'location_name', 
