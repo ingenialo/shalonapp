@@ -20,7 +20,7 @@ class PaymentAdmin(admin.ModelAdmin):
         'change_amount',
         'employee_code_id',
         'employee_name',
-        # 'client'
+        'client'
         )
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')

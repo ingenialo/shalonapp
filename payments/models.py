@@ -14,7 +14,7 @@ class Payment(models.Model):
     change_amount = models.IntegerField(null=True)
     employee_code_id = models.IntegerField(null=True , blank=True)
     employee_name = models.CharField(max_length=200)
-    # client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
+    client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
 
 
 class Payment_Transactions(models.Model):
