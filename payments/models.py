@@ -1,5 +1,3 @@
-from numbers import Number
-from tkinter import CASCADE
 from django.db import models
 
 from clients.models import Clients
@@ -16,4 +14,14 @@ class Payment(models.Model):
     change_amount = models.IntegerField(null=True)
     employee_code_id = models.IntegerField(null=True , blank=True)
     employee_name = models.CharField(max_length=200)
-    client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
+    # client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
+
+
+class Payment_Transactions(models.Model):
+    
+    number = models.IntegerField(null=True)
+    amount = models.IntegerField(null=True)
+    installments = models.IntegerField(null=True)
+    payment_method = models.CharField(max_length=200)
+    payment_method_type = models.CharField(max_length=200)
+    bank = models.CharField(max_length=200)

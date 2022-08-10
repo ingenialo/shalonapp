@@ -5,7 +5,8 @@ from django.db import models
 class Receipt(models.Model):
 
     id = models
-    amount = models.ManyToManyField('')
+    # amount = models.ForeignKey('')
     date = models.DateTimeField(auto_now_add=True)
-    number = models.IntegerField()
-    receipt_type = models.TextField()
+    number = models.IntegerField(null=True)
+    receipt_type = models.TextField(max_length=200)
+
