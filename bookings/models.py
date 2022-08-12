@@ -1,13 +1,13 @@
 from django.db import models
 
 from payments.models import Payment
-from clients.models import Clients
+
 
 
 
 class Booking(models.Model):
     
-    Payment = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
+    Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     
     
     web_origin = models.CharField(max_length=200, blank=True, null=True)

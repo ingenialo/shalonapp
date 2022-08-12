@@ -6,8 +6,14 @@ from clients.models import Clients
 
 
 @admin.register(Clients)
-class ClientAdmin(admin.ModelAdmin):
+class ClientsAdmin(admin.ModelAdmin):
     pass 
     
   
+  
+class ClientsInline(admin.TabularInline):
+    # Receipt in-line 
+    model = Clients
+    can_delete = False
+    verbose_name_plural = 'clients'
 # Register your models here.

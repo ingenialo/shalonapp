@@ -1,6 +1,9 @@
+from django.contrib.auth.admin import UserAdmin
 from django.contrib import admin
+from django.db import models
 
 from bookings.models import Booking
+from django.contrib.auth.models import User
 
 
 
@@ -26,24 +29,9 @@ class BookingAdmin(admin.ModelAdmin):
         'start',
         'end'
         )
-    # list_display_links = ('pk')
-    # list_editable = ('phone_number', 'website', 'picture')
-    search_fields = []        
-    list_filter = []
-    
-    
-    
-      
-    
-    
-    
-    
-     
-    
-   
-    
-    
-    
-     
-    
-    
+
+class BookingInline(admin.TabularInline):
+    # Booking in-line 
+    model = Booking
+    can_delete = False
+    verbose_name_plural = 'bookings'

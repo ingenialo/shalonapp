@@ -18,7 +18,7 @@ class Payment(models.Model):
 
 
 class Payment_Transactions(models.Model):
-    
+    Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     number = models.IntegerField(null=True)
     amount = models.IntegerField(null=True)
     installments = models.IntegerField(null=True)
