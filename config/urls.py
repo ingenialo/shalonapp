@@ -15,14 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from payments import views 
+# from clients import views
+# from . import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('payments/', views.list_payments),
+    path('test/', views.test)
 ]
 
 
-print('imprimiendo_desde_la_url')
-print('holi')
+# print('imprimiendo_desde_la_url')
+# print('holi')
 
 # from django.conf import settings
 # print(base.BASE_DIR)

@@ -7,7 +7,7 @@ from clients.models import Clients
 
 @admin.register(Clients)
 class ClientsAdmin(admin.ModelAdmin):
-    pass 
+    list_display=["id","email"]
     
   
   

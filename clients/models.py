@@ -3,7 +3,7 @@ from django.db import models
 
 class Clients(models.Model):
     
-    
+    agenda_id = models.IntegerField(null=True, blank=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(unique=True)
