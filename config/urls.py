@@ -23,7 +23,7 @@ from .views import test_celery
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('payments/', views.list_payments),
-    path('test/', views.test)
+    path('test/', views.test),
     path('celery-test/', test_celery),
 ]
 
