@@ -131,8 +131,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Celery
-INSTALLED_APPS += ['django_celery_beat']
-INSTALLED_APPS += ['django_celery_results']
+# INSTALLED_APPS += ['django_celery_beat']
+# INSTALLED_APPS += ['django_celery_results']
 INSTALLED_APPS += ['apps.taskapp.celery.CeleryAppConfig']
 if USE_TZ:
     CELERY_TIMEZONE = TIME_ZONE

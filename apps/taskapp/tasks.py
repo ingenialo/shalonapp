@@ -1,6 +1,5 @@
 # Celery
 from apps.taskapp.celery import app
-from celery.decorators import periodic_task
 
 # Utilities
 from datetime import timedelta, timezone
