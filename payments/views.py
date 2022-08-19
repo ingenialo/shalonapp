@@ -5,7 +5,15 @@ import json
 from pprint import pprint
 from clients.models import Clients
 from payments.models import Payment
+from clients.serializer import ClientSerializer
 
+def conv(value):
+    if value:
+        print("retorno el valor")
+        return value
+    else:
+        print("seria none")
+        return None
 
 # Create your views here.
 def list_payments(request):
@@ -42,11 +50,11 @@ def list_payments(request):
                         'identification_number' : clientejson['identification_number']  ,
                         'phone' : clientejson['phone'] ,
                         'second_phone' : clientejson['second_phone'],
-                        'age' : clientejson['age'],
-                        'birth_day' : clientejson['birth_day'],
-                        'birth_month' : clientejson['birth_month'],
-                        'birth_year' : clientejson['birth_year'],
-                        'record_number' : clientejson['record_number'],
+                        'age' : conv(clientejson['age']),
+                        'birth_day' : conv(clientejson['birth_day']),
+                        'birth_month' : conv(clientejson['birth_month']),
+                        'birth_year' : conv(clientejson['birth_year']),
+                        'record_number' : conv(clientejson['record_number']),
                         'address' : clientejson['address'],
                         'district' : clientejson['district'],
                         'city' : clientejson['city'],
