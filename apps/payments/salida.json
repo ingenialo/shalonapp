@@ -1,0 +1,2230 @@
+{
+  "payments": [
+    {
+      "id": 12890895,
+      "payment_date": "2022-08-20T11:49:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2700733,
+        "first_name": "LAURA ",
+        "last_name": "RENGIFO ALVAREZ ",
+        "email": "laurarengifo1@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 311 2360735",
+        "second_phone": "",
+        "age": 23,
+        "birth_day": 16,
+        "birth_month": 4,
+        "birth_year": 1999,
+        "record_number": "",
+        "address": "",
+        "district": "CIUDAD JARDIN",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "Ma. CAMILA O.",
+          "status": "Asiste",
+          "receipt_id": 13312560,
+          "start": "2022-08-20T12:00:00.000Z",
+          "end": "2022-08-20T12:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312560,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62393",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890840,
+      "payment_date": "2022-08-20T11:48:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 40000.0,
+      "paid_amount": 40000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 14717816,
+        "first_name": "LINDA VANESSA",
+        "last_name": "VIVEROS RIVERA",
+        "email": "linda-89-13@hotmail.com",
+        "identification_number": "1.144.133.995",
+        "phone": "+57 318 5217211",
+        "second_phone": "",
+        "age": 32,
+        "birth_day": 13,
+        "birth_month": 9,
+        "birth_year": 1989,
+        "record_number": "",
+        "address": "CRA 1 A BIS 58 2 28",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": true,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 40000.0,
+          "discount": 0.0,
+          "service": "DISENO DE CEJAS",
+          "provider": "ALEJANDRA O.",
+          "status": "Asiste",
+          "receipt_id": 13312502,
+          "start": "2022-08-20T10:00:00.000Z",
+          "end": "2022-08-20T10:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 40000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312502,
+          "amount": 40000.0,
+          "date": "2022-08-20",
+          "number": "62392",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890750,
+      "payment_date": "2022-08-20T11:45:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2722611,
+        "first_name": "CAMILA ",
+        "last_name": "TAUTIVA MAZORRA ",
+        "email": "camilatautiva00@gmail.com",
+        "identification_number": "",
+        "phone": "+57 316 6788890",
+        "second_phone": "",
+        "age": 26,
+        "birth_day": 4,
+        "birth_month": 12,
+        "birth_year": 1995,
+        "record_number": "",
+        "address": "CRA  103  12B 106",
+        "district": "CIUDAD JARDIN",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. YERALDIN CORTES",
+          "status": "Confirmado",
+          "receipt_id": 13312408,
+          "start": "2022-08-20T12:00:00.000Z",
+          "end": "2022-08-20T12:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Transferencia",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312408,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62391",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890688,
+      "payment_date": "2022-08-20T11:44:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 8189411,
+        "first_name": "DELIANNY GABRIELA",
+        "last_name": "COLMENAREZ SIRA",
+        "email": "deliannycolmarez@gmail.com",
+        "identification_number": "26.700.956",
+        "phone": "+57 315 8914639",
+        "second_phone": "",
+        "age": 23,
+        "birth_day": 5,
+        "birth_month": 10,
+        "birth_year": 1998,
+        "record_number": "",
+        "address": "CARRERA 18 #3-65 ",
+        "district": "",
+        "city": "CALI"
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "ANGELICA D.",
+          "status": "Asiste",
+          "receipt_id": 13312345,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312345,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "26219",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890627,
+      "payment_date": "2022-08-20T11:42:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 175000.0,
+      "paid_amount": 175000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 14157014,
+        "first_name": "HEIDY",
+        "last_name": "LONDO\u00d1O",
+        "email": "heilonbal@hotmail.com",
+        "identification_number": "31.534.537",
+        "phone": "+57 318 2637692",
+        "second_phone": "",
+        "age": 42,
+        "birth_day": 6,
+        "birth_month": 5,
+        "birth_year": 1980,
+        "record_number": "",
+        "address": "cll 15a #15-119",
+        "district": "",
+        "city": "la pradera"
+      },
+      "bookings": [],
+      "products": [
+        {
+          "price": 55000.0,
+          "discount": 0.0,
+          "quantity": 1,
+          "product": "HIDRATANTE DE LABIOS SHALON",
+          "product_brand": "SHALON LASH",
+          "product_display": "15ml",
+          "product_category": "CUIDADO DE PIEL",
+          "product_price": 55000.0,
+          "receipt_id": 13312284,
+          "seller_details": "YIRE (prestador)"
+        },
+        {
+          "price": 120000.0,
+          "discount": 0.0,
+          "quantity": 1,
+          "product": "FORTALECEDOR DE CEJAS SLB",
+          "product_brand": "SHALON LASH",
+          "product_display": "3ml",
+          "product_category": "CEJAS",
+          "product_price": 120000.0,
+          "receipt_id": 13312284,
+          "seller_details": "YIRE (prestador)"
+        }
+      ],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 175000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312284,
+          "amount": 175000.0,
+          "date": "2022-08-20",
+          "number": "62390",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890610,
+      "payment_date": "2022-08-20T11:41:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 35000.0,
+      "paid_amount": 35000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 9684361,
+        "first_name": "VERONICA ",
+        "last_name": "FIGUEROA  YEPES",
+        "email": "veronica.figeroay@gmail.com",
+        "identification_number": "",
+        "phone": "+57 300 6550997",
+        "second_phone": "",
+        "age": 31,
+        "birth_day": 27,
+        "birth_month": 10,
+        "birth_year": 1990,
+        "record_number": "",
+        "address": "AV 8 NORTE #49-15",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": " DIANA P.",
+          "status": "Asiste",
+          "receipt_id": 13312265,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [
+        {
+          "price": 10000.0,
+          "discount": 0.0,
+          "service": "DEPILACION BIGOTE",
+          "provider": " DIANA P.",
+          "receipt_id": 13312265
+        }
+      ],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 10000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            },
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312265,
+          "amount": 35000.0,
+          "date": "2022-08-20",
+          "number": "26218",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890599,
+      "payment_date": "2022-08-20T11:41:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 9275858,
+        "first_name": "VALENTINA",
+        "last_name": "GUARNIZO",
+        "email": "Valengl405@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 310 7183502",
+        "second_phone": "",
+        "age": 25,
+        "birth_day": 6,
+        "birth_month": 10,
+        "birth_year": 1996,
+        "record_number": "",
+        "address": "CRA 49    120 52",
+        "district": "CIUDAD PACIFICA",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. JOHANA P",
+          "status": "Asiste",
+          "receipt_id": 13312254,
+          "start": "2022-08-20T12:00:00.000Z",
+          "end": "2022-08-20T12:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312254,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62389",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890369,
+      "payment_date": "2022-08-20T11:35:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 10069534,
+        "first_name": "LOREN",
+        "last_name": "URDINOLA",
+        "email": "Urdinolaloren@gmail.com",
+        "identification_number": "1.144.054.185",
+        "phone": "+57 305 2348650",
+        "second_phone": "",
+        "age": 30,
+        "birth_day": 12,
+        "birth_month": 9,
+        "birth_year": 1991,
+        "record_number": "",
+        "address": "CLL 14 C 64 B 90",
+        "district": "LIMONAR",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": " ELIANA G.",
+          "status": "Asiste",
+          "receipt_id": 13312018,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312018,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62388",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890352,
+      "payment_date": "2022-08-20T11:34:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 13617069,
+        "first_name": "MARCELA ",
+        "last_name": "GOMEZ  RAMOS ",
+        "email": "gmgr85@hotmail.com",
+        "identification_number": "67.040.581",
+        "phone": "+57 317 5679615",
+        "second_phone": "",
+        "age": 37,
+        "birth_day": 22,
+        "birth_month": 6,
+        "birth_year": 1985,
+        "record_number": "",
+        "address": "CL 18 BIS#127C-11",
+        "district": "",
+        "city": "CALI"
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. YAJAIRA C.",
+          "status": "Asiste",
+          "receipt_id": 13312001,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13312001,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62387",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890321,
+      "payment_date": "2022-08-20T11:33:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 4792761,
+        "first_name": "ANGELA ",
+        "last_name": "CARDOSO BARRERO",
+        "email": "angelitacard@hotmail.com",
+        "identification_number": "66.852.953",
+        "phone": "+57 317 4363921",
+        "second_phone": "",
+        "age": 49,
+        "birth_day": 24,
+        "birth_month": 12,
+        "birth_year": 1972,
+        "record_number": "",
+        "address": "CL 14 83-100 APTO 502",
+        "district": "",
+        "city": "CALI"
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. JOHANA P",
+          "status": "Asiste",
+          "receipt_id": 13311970,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311970,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62386",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890292,
+      "payment_date": "2022-08-20T11:32:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2722961,
+        "first_name": "VANESSA",
+        "last_name": "CLAVIJO  MEJIA",
+        "email": "vanessaclame@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 314 5532191",
+        "second_phone": "",
+        "age": 35,
+        "birth_day": 9,
+        "birth_month": 3,
+        "birth_year": 1987,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. YERALDIN CORTES",
+          "status": "Asiste",
+          "receipt_id": 13311940,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311940,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62385",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890157,
+      "payment_date": "2022-08-20T11:28:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 15000.0,
+      "paid_amount": 15000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 5377100,
+        "first_name": "LUZ",
+        "last_name": "DARY ZAPATA",
+        "email": "luzdaryzapata0210@gmail.com",
+        "identification_number": "",
+        "phone": "+57 301 6568181",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 15000.0,
+          "discount": 0.0,
+          "service": "DEPILACION MICRO",
+          "provider": "ANGELICA D.",
+          "status": "Asiste",
+          "receipt_id": 13311802,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 15000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311802,
+          "amount": 15000.0,
+          "date": "2022-08-20",
+          "number": "26217",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12890070,
+      "payment_date": "2022-08-20T11:26:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 15000.0,
+      "paid_amount": 15000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 11133692,
+        "first_name": "ANA ADELA",
+        "last_name": "IBARRA TORRES",
+        "email": "anadelaasamblea@gmail.com",
+        "identification_number": "3.186.314",
+        "phone": "+57 314 6121952",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 15000.0,
+          "discount": 0.0,
+          "service": "DEPILACION MICRO",
+          "provider": " DIANA P.",
+          "status": "Asiste",
+          "receipt_id": 13311709,
+          "start": "2022-08-20T12:30:00.000Z",
+          "end": "2022-08-20T13:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 15000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311709,
+          "amount": 15000.0,
+          "date": "2022-08-20",
+          "number": "26216",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889998,
+      "payment_date": "2022-08-20T11:24:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 15000.0,
+      "paid_amount": 15000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 11133721,
+        "first_name": "MARIA DEL MAR",
+        "last_name": "TORDECILLA GUTIERREZ",
+        "email": "mariadelmartg24@gmail.com",
+        "identification_number": "1.143.875.861",
+        "phone": "+57 320 6677125",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 15000.0,
+          "discount": 0.0,
+          "service": "DEPILACION MICRO",
+          "provider": " DIANA P.",
+          "status": "Asiste",
+          "receipt_id": 13311633,
+          "start": "2022-08-20T12:30:00.000Z",
+          "end": "2022-08-20T13:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 15000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311633,
+          "amount": 15000.0,
+          "date": "2022-08-20",
+          "number": "26215",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889871,
+      "payment_date": "2022-08-20T11:21:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2571967,
+        "first_name": "HEIDY JOHANA ",
+        "last_name": "VELASCO AGUDELO",
+        "email": "HEIDYVELZCO9211@GMAIL.COM",
+        "identification_number": "",
+        "phone": "+57 320 5728174",
+        "second_phone": "",
+        "age": 29,
+        "birth_day": 10,
+        "birth_month": 11,
+        "birth_year": 1992,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "Ma. CAMILA O.",
+          "status": "Asiste",
+          "receipt_id": 13311503,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311503,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62384",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889856,
+      "payment_date": "2022-08-20T11:20:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 40000.0,
+      "paid_amount": 40000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 10701749,
+        "first_name": "NATHALIA",
+        "last_name": "GONZALEZ POSADA",
+        "email": "nathalia.g9@hotmail.com",
+        "identification_number": "1.143.862.541",
+        "phone": "+57 304 3540232",
+        "second_phone": "",
+        "age": 27,
+        "birth_day": 29,
+        "birth_month": 7,
+        "birth_year": 1995,
+        "record_number": "",
+        "address": "CL 8 A OESTE~#4-116",
+        "district": "",
+        "city": "CALI"
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 40000.0,
+          "discount": 0.0,
+          "service": "DISENO DE CEJAS",
+          "provider": " YOANA C.",
+          "status": "Asiste",
+          "receipt_id": 13311488,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "111718",
+              "amount": 40000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311488,
+          "amount": 40000.0,
+          "date": "2022-08-20",
+          "number": "26214",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889722,
+      "payment_date": "2022-08-20T11:18:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2729118,
+        "first_name": "ADRIANA",
+        "last_name": "HOYOS ORTEGA",
+        "email": "fer-1234@hotmail.com",
+        "identification_number": "1.143.967.578",
+        "phone": "+57 313 8380559",
+        "second_phone": "",
+        "age": 28,
+        "birth_day": 10,
+        "birth_month": 4,
+        "birth_year": 1994,
+        "record_number": "",
+        "address": "CLL 48 99 20",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "ALEJANDRA O.",
+          "status": "Asiste",
+          "receipt_id": 13311353,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311353,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62383",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889663,
+      "payment_date": "2022-08-20T11:16:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 50000.0,
+      "paid_amount": 50000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2570814,
+        "first_name": "RUBY DALILA ",
+        "last_name": "SANCHEZ POSADA VIP",
+        "email": "rubbydalila0829@gmail.com",
+        "identification_number": "",
+        "phone": "+57 321 3583637",
+        "second_phone": "",
+        "age": 44,
+        "birth_day": 29,
+        "birth_month": 8,
+        "birth_year": 1977,
+        "record_number": "",
+        "address": "GUADUALES VERDE ",
+        "district": "ALFAGUARA  JAMUNDI",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": null,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 50000.0,
+          "discount": 0.0,
+          "service": "RETOQUE VR 7 A 10 DIAS",
+          "provider": "KAREN S.",
+          "status": "Asiste",
+          "receipt_id": 13311293,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 40000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            },
+            {
+              "number": "",
+              "amount": 10000.0,
+              "installments": 0,
+              "payment_method": "Descuento VIP",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311293,
+          "amount": 50000.0,
+          "date": "2022-08-20",
+          "number": "62382",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889510,
+      "payment_date": "2022-08-20T11:08:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 175000.0,
+      "paid_amount": 175000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 12170471,
+        "first_name": "PAOLA",
+        "last_name": "MARTINEZ BELLO",
+        "email": "paolamarti9@hotmail.com",
+        "identification_number": "1.070.006.067",
+        "phone": "+57 311 5229069",
+        "second_phone": "",
+        "age": 35,
+        "birth_day": 20,
+        "birth_month": 8,
+        "birth_year": 1987,
+        "record_number": "",
+        "address": "CRA 3A #3-44",
+        "district": "",
+        "city": "CAJICA"
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "ANGELICA D.",
+          "status": "Asiste",
+          "receipt_id": 13311134,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [
+        {
+          "price": 150000.0,
+          "discount": 0.0,
+          "quantity": 1,
+          "product": "FORTALECEDOR DE PESTANAS SLB",
+          "product_brand": "SHALON LASH",
+          "product_display": "3ml",
+          "product_category": "PESTA\u00d1AS",
+          "product_price": 150000.0,
+          "receipt_id": 13311134,
+          "seller_details": "ANGELICA D. (prestador)"
+        }
+      ],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "111227-110846",
+              "amount": 150000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            },
+            {
+              "number": "111227-110846",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311134,
+          "amount": 175000.0,
+          "date": "2022-08-20",
+          "number": "",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889494,
+      "payment_date": "2022-08-20T11:11:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 50000.0,
+      "paid_amount": 50000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 3321363,
+        "first_name": "LILIANA",
+        "last_name": "SALAZAR BELTRAN",
+        "email": "",
+        "identification_number": "1.107.079.911",
+        "phone": "+57 316 8743858",
+        "second_phone": "",
+        "age": 28,
+        "birth_day": 23,
+        "birth_month": 12,
+        "birth_year": 1993,
+        "record_number": "",
+        "address": "CRA 98    60 133",
+        "district": "VALLE DEL LILI",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 50000.0,
+          "discount": 0.0,
+          "service": "RETOQUE VR 7 A 10 DIAS",
+          "provider": "  YOHANA M.",
+          "status": "Asiste",
+          "receipt_id": 13311117,
+          "start": "2022-08-20T12:00:00.000Z",
+          "end": "2022-08-20T13:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 50000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311117,
+          "amount": 50000.0,
+          "date": "2022-08-20",
+          "number": "62381",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889452,
+      "payment_date": "2022-08-20T11:08:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 150000.0,
+      "paid_amount": 150000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 6759029,
+        "first_name": "EYDENIZ",
+        "last_name": "ERAZO RODRIGUEZ",
+        "email": "eydeniz1@hotmail.com",
+        "identification_number": "66.906.844",
+        "phone": "+57 312 8071376",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [],
+      "products": [
+        {
+          "price": 150000.0,
+          "discount": 0.0,
+          "quantity": 1,
+          "product": "FORTALECEDOR DE PESTANAS SLB",
+          "product_brand": "SHALON LASH",
+          "product_display": "3ml",
+          "product_category": "PESTA\u00d1AS",
+          "product_price": 150000.0,
+          "receipt_id": 13311075,
+          "seller_details": "SPMP (prestador)"
+        }
+      ],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "110212",
+              "amount": 150000.0,
+              "installments": 4,
+              "payment_method": "Tarjeta de Cr\u00e9dito",
+              "payment_method_type": "MasterCard",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13311075,
+          "amount": 150000.0,
+          "date": "2022-08-20",
+          "number": "26213",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889371,
+      "payment_date": "2022-08-20T11:08:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 35000.0,
+      "paid_amount": 35000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2571319,
+        "first_name": "GISETH",
+        "last_name": "LUNA MUNERA",
+        "email": "giseth031@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 321 7765666",
+        "second_phone": "",
+        "age": 30,
+        "birth_day": 20,
+        "birth_month": 1,
+        "birth_year": 1992,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "ALEJANDRA O.",
+          "status": "Asiste",
+          "receipt_id": 13310993,
+          "start": "2022-08-20T11:30:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [
+        {
+          "price": 10000.0,
+          "discount": 0.0,
+          "service": "DEPILACION BIGOTE",
+          "provider": "ALEJANDRA O.",
+          "receipt_id": 13310993
+        }
+      ],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 10000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            },
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310993,
+          "amount": 35000.0,
+          "date": "2022-08-20",
+          "number": "62380",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889266,
+      "payment_date": "2022-08-20T11:05:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 100000.0,
+      "paid_amount": 100000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 6759029,
+        "first_name": "EYDENIZ",
+        "last_name": "ERAZO RODRIGUEZ",
+        "email": "eydeniz1@hotmail.com",
+        "identification_number": "66.906.844",
+        "phone": "+57 312 8071376",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 100000.0,
+          "discount": 0.0,
+          "service": "RETOQUE VR 18 A 26 DIAS",
+          "provider": "SUPERNUMERARIA",
+          "status": "Asiste",
+          "receipt_id": 13310886,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T12:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "110012",
+              "amount": 100000.0,
+              "installments": 4,
+              "payment_method": "Tarjeta de Cr\u00e9dito",
+              "payment_method_type": "MasterCard",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310886,
+          "amount": 100000.0,
+          "date": "2022-08-20",
+          "number": "26212",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889170,
+      "payment_date": "2022-08-20T11:03:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 5063777,
+        "first_name": "SONIA",
+        "last_name": "SANCHEZ CAMACHO",
+        "email": "soffy71@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 315 4337232",
+        "second_phone": "",
+        "age": 51,
+        "birth_day": 4,
+        "birth_month": 2,
+        "birth_year": 1971,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": " ELIANA G.",
+          "status": "Asiste",
+          "receipt_id": 13310789,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310789,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62379",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12889062,
+      "payment_date": "2022-08-20T11:00:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 35000.0,
+      "paid_amount": 35000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 2818921,
+        "first_name": "VERONICA",
+        "last_name": "QUINTERO BELTRAN ",
+        "email": "veropink08@hotmail.com",
+        "identification_number": "",
+        "phone": "+57 305 4086619",
+        "second_phone": "3505444130  wathasap",
+        "age": 37,
+        "birth_day": 8,
+        "birth_month": 6,
+        "birth_year": 1985,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "T. YERALDIN CORTES",
+          "status": "Asiste",
+          "receipt_id": 13310675,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        },
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "",
+          "price": 10000.0,
+          "discount": 33.33333333333334,
+          "service": "DEPILACION MICRO",
+          "provider": "T. YERALDIN CORTES",
+          "status": "Asiste",
+          "receipt_id": 13310675,
+          "start": "2022-08-20T11:00:00.000Z",
+          "end": "2022-08-20T11:30:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 35000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310675,
+          "amount": 35000.0,
+          "date": "2022-08-20",
+          "number": "62378",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12888862,
+      "payment_date": "2022-08-20T10:54:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 10000.0,
+      "paid_amount": 10000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 14354597,
+        "first_name": "ANDREA",
+        "last_name": "VILLA",
+        "email": "camivilla0908@gmail.com",
+        "identification_number": "",
+        "phone": "+52 64492498",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [],
+      "products": [],
+      "mock_bookings": [
+        {
+          "price": 10000.0,
+          "discount": 0.0,
+          "service": "DEPILACION BIGOTE",
+          "provider": " DIANA P.",
+          "receipt_id": 13310474
+        }
+      ],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "095334",
+              "amount": 10000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310474,
+          "amount": 10000.0,
+          "date": "2022-08-20",
+          "number": "26211",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12888803,
+      "payment_date": "2022-08-20T10:53:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 20000.0,
+      "paid_amount": 20000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 14525522,
+        "first_name": "SORAYA",
+        "last_name": " FERNANDEZ",
+        "email": "girasol0821@hotmail.com",
+        "identification_number": "38.562.791",
+        "phone": "+57 316 4163096",
+        "second_phone": "",
+        "age": 40,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "CRA 112  48  92",
+        "district": "BOCHALEMA",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 20000.0,
+          "discount": 0.0,
+          "service": "RETOQUE SN 7 a 10 DIAS",
+          "provider": " T. ANGIE DANIELA SANTIAGO",
+          "status": "Asiste",
+          "receipt_id": 13310413,
+          "start": "2022-08-20T10:00:00.000Z",
+          "end": "2022-08-20T11:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 20000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310413,
+          "amount": 20000.0,
+          "date": "2022-08-20",
+          "number": "62377",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12888763,
+      "payment_date": "2022-08-20T10:51:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 10000.0,
+      "paid_amount": 10000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 13011787,
+        "first_name": "ISABELA ",
+        "last_name": "TAFUR  VILLA",
+        "email": "",
+        "identification_number": "",
+        "phone": "+57 312 7528548",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "",
+        "district": "",
+        "city": ""
+      },
+      "bookings": [],
+      "products": [],
+      "mock_bookings": [
+        {
+          "price": 10000.0,
+          "discount": 0.0,
+          "service": "DEPILACION BIGOTE",
+          "provider": "ANGELICA D.",
+          "receipt_id": 13310373
+        }
+      ],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "095334",
+              "amount": 10000.0,
+              "installments": 0,
+              "payment_method": "Tarjeta de D\u00e9bito",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310373,
+          "amount": 10000.0,
+          "date": "2022-08-20",
+          "number": "26210",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12888628,
+      "payment_date": "2022-08-20T10:49:00.000Z",
+      "location_id": 3291,
+      "location_name": " SHALON SEDE CASA SHALON",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 13154961,
+        "first_name": "STEFANY",
+        "last_name": "BUSTAMANTE VICTORIA",
+        "email": "stefy204@hoatl.com",
+        "identification_number": "1.107.050.596",
+        "phone": "+57 318 5605924",
+        "second_phone": "",
+        "age": 33,
+        "birth_day": 19,
+        "birth_month": 9,
+        "birth_year": 1988,
+        "record_number": "",
+        "address": "CRA 1 C#58-30",
+        "district": "TORRES DE CONFAMDI ",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "ANGELICA D.",
+          "status": "Asiste",
+          "receipt_id": 13310236,
+          "start": "2022-08-20T10:30:00.000Z",
+          "end": "2022-08-20T11:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Transferencia",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310236,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "26209",
+          "receipt_type": "Factura"
+        }
+      ]
+    },
+    {
+      "id": 12888613,
+      "payment_date": "2022-08-20T10:49:00.000Z",
+      "location_id": 3292,
+      "location_name": "SHALON SEDE AVENTURA PLAZA",
+      "amount": 25000.0,
+      "paid_amount": 25000.0,
+      "change_amount": 0.0,
+      "employee_code_id": null,
+      "employee_code_name": "",
+      "client": {
+        "id": 10312970,
+        "first_name": "XIMENA",
+        "last_name": "GARCIA MARTINEZ",
+        "email": "ximenagm21@gmail.com",
+        "identification_number": "1.144.036.216",
+        "phone": "+57 315 6710096",
+        "second_phone": "",
+        "age": null,
+        "birth_day": null,
+        "birth_month": null,
+        "birth_year": null,
+        "record_number": "",
+        "address": "Cl 2a 65a 101",
+        "district": "refugio",
+        "city": ""
+      },
+      "bookings": [
+        {
+          "web_origin": false,
+          "provider_lock": false,
+          "is_session": false,
+          "is_session_booked": false,
+          "notes": "Bienvenido(a) a Shalon Lash Brow , Por favor llegar 5 min antes.",
+          "price": 25000.0,
+          "discount": 0.0,
+          "service": "RETOQUE CEJAS 14 a 20 DIAS",
+          "provider": "Ma. CAMILA O.",
+          "status": "Asiste",
+          "receipt_id": 13310221,
+          "start": "2022-08-20T10:30:00.000Z",
+          "end": "2022-08-20T11:00:00.000Z"
+        }
+      ],
+      "products": [],
+      "mock_bookings": [],
+      "memberships": [],
+      "giftcards": [],
+      "down_payment": [
+        {
+          "payment_transactions": [
+            {
+              "number": "",
+              "amount": 25000.0,
+              "installments": 0,
+              "payment_method": "Efectivo",
+              "payment_method_type": "",
+              "bank": ""
+            }
+          ]
+        }
+      ],
+      "receipts": [
+        {
+          "id": 13310221,
+          "amount": 25000.0,
+          "date": "2022-08-20",
+          "number": "62376",
+          "receipt_type": "Factura"
+        }
+      ]
+    }
+  ]
+}
