@@ -8,7 +8,7 @@ class Payment(models.Model):
 
     # id = models.AutoField(auto_created=True)
     agenda_id = models.IntegerField(null=True, unique=True)
-    payment_date = models.DateTimeField(auto_now_add=True)
+    payment_date = models.IntegerField(null=True)
     location_id = models.IntegerField(null=True)
     location_name = models.CharField(null=True, max_length=200)
     amount = models.IntegerField(null=True)
