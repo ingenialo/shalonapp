@@ -1,11 +1,8 @@
 from django.db import models
 from apps.payments.models import Payment
+from config.utils.models import CustomBaseModel
 
-# Create your models here.
-
-class Receipt(models.Model):
-
-    id = models
+class Receipt(CustomBaseModel):
     Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
     amount = models.IntegerField(null=True)
     date = models.DateTimeField(auto_now_add=True)

@@ -10,7 +10,7 @@ class PaymentInline(admin.TabularInline):
 
 @admin.register(Clients)
 class ClientsAdmin(admin.ModelAdmin):
-    list_display=["id","agenda_id","email","first_name","last_name","identification_number"]
+    list_display=["id","agenda_id","email","first_name","last_name","identification_number",'created_at','updated_at']
     inlines = [PaymentInline]
   
   

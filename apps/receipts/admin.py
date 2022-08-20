@@ -36,6 +36,8 @@ class ReceiptAdmin(admin.ModelAdmin):
         'date', 
         'number', 
         'receipt_type',
+        'created_at',
+        'updated_at'
         )
     
     

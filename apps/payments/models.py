@@ -1,10 +1,8 @@
 from django.db import models
 
-# from clients.models import Clients
+from config.utils.models import CustomBaseModel
 
-
-
-class Payment(models.Model):
+class Payment(CustomBaseModel):
 
     # id = models.AutoField(auto_created=True)
     agenda_id = models.IntegerField(null=True, unique=True)

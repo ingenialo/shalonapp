@@ -13,3 +13,26 @@ class CustomBaseModel(models.Model):
         + created_at (DateTime): Store the datetime the object was created.
         + updated_at (DateTime): Store the last datetime the object was modified.
     """
+
+    created_at = models.DateTimeField(
+        'created at',
+        null=True,
+        blank=True,
+        auto_now_add=True,
+        help_text='Date time on which the object was created.'
+    )
+    updated_at = models.DateTimeField(
+        'updated at',
+        null=True,
+        blank=True,
+        auto_now=True,
+        help_text='Date time on which the object was last modified.'
+    )
+
+    class Meta:
+        """Meta option."""
+
+        abstract = True
+
+        get_latest_by = 'created_at'
+        ordering = ['-created_at', '-updated_at']

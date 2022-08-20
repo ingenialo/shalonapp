@@ -27,7 +27,9 @@ class BookingAdmin(admin.ModelAdmin):
         # 'add',
         'status',
         'start',
-        'end'
+        'end',
+        'created_at',
+        'updated_at'
         )
 
 class BookingInline(admin.TabularInline):

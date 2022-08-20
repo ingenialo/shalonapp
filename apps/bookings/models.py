@@ -1,15 +1,9 @@
 from django.db import models
 
 from apps.payments.models import Payment
-
-
-
-
-class Booking(models.Model):
-    
+from config.utils.models import CustomBaseModel
+class Booking(CustomBaseModel):
     Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
-    
-    
     web_origin = models.CharField(max_length=200, blank=True, null=True)
     provider_lock = models.CharField(max_length=200, blank=True , null=True)
     is_session_booked = models.BooleanField(blank=True, null=True)

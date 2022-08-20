@@ -1,7 +1,7 @@
 from django.db import models
+from config.utils.models import CustomBaseModel
 
-
-class Clients(models.Model):
+class Clients(CustomBaseModel):
     
     agenda_id = models.IntegerField(blank=True,null=True, unique=True)
     first_name = models.CharField(max_length=200,blank=True,null=True)
