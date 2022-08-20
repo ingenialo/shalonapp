@@ -18,18 +18,15 @@ class PaymentAdmin(admin.ModelAdmin):
 
 # Register your models here.
     list_display = (
-        # 'pk', 
+        'agenda_id', 
         'payment_date', 
-        'location_id', 
         'location_name', 
+        'client',
         'amount', 
         'paid_amount',
-        'change_amount',
-        'employee_code_id',
-        'employee_code_name',
-        'client'
         )
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')
     search_fields = []        
     list_filter = []
+    ordering=["-payment_date"]
