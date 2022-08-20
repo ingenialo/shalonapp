@@ -7,8 +7,8 @@ from django.db import models
 # from clients.admin import ClientsInline
 
 # Register your models here.
-from receipts.models import Receipt
 from django.contrib.auth.models import User
+from apps.receipts.models import Receipt
 
 
 

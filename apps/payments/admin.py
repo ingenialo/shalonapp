@@ -1,10 +1,10 @@
 from django.contrib import admin
 
 # Register your models here.
-from payments.models import Payment
-from bookings.admin import BookingInline
-from receipts.admin import ReceiptInline
-from clients.admin import ClientsInline
+from apps.payments.models import Payment
+from apps.bookings.admin import BookingInline
+from apps.receipts.admin import ReceiptInline
+from apps.clients.admin import ClientsInline
 
 
 

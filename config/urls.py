@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from payments import views 
+from apps.payments import views 
 # from clients import views
 # from . import views 
 from .views import test_celery
