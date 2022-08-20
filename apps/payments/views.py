@@ -27,35 +27,25 @@ def list_payments(request):
     f.close()
     if response.status_code == 200:
         for paymentjson in response_json["payments"]:
-            print("-----------------------------")
             clientejson=paymentjson["client"]
-            clientedb = {}
-            clientedb = Clients.objects.filter(agenda_id=clientejson["id"]).first()
             cliente = {
-                        'agenda_id' : conv(clientejson['id']),
-                        'first_name' : conv(clientejson['first_name']),
-                        'last_name' : conv(clientejson['last_name']),
-                        'email' : conv(clientejson['email']),
-                        'identification_number' : conv(clientejson['identification_number']),
-                        'phone' : conv(clientejson['phone']),
-                        'second_phone' : conv(clientejson['second_phone']),
-                        'age' : conv(clientejson['age']),
-                        'birth_day' : conv(clientejson['birth_day']),
-                        'birth_month' : conv(clientejson['birth_month']),
-                        'birth_year' : conv(clientejson['birth_year']),
-                        'record_number' : conv(clientejson['record_number']),
-                        'address' : conv(clientejson['address']),
-                        'district' : conv(clientejson['district']),
-                        'city' : conv(clientejson['city']),
+                'agenda_id' : conv(clientejson['id']),
+                'first_name' : conv(clientejson['first_name']),
+                'last_name' : conv(clientejson['last_name']),
+                'email' : conv(clientejson['email']),
+                'identification_number' : conv(clientejson['identification_number']),
+                'phone' : conv(clientejson['phone']),
+                'second_phone' : conv(clientejson['second_phone']),
+                'age' : conv(clientejson['age']),
+                'birth_day' : conv(clientejson['birth_day']),
+                'birth_month' : conv(clientejson['birth_month']),
+                'birth_year' : conv(clientejson['birth_year']),
+                'record_number' : conv(clientejson['record_number']),
+                'address' : conv(clientejson['address']),
+                'district' : conv(clientejson['district']),
+                'city' : conv(clientejson['city']),
             }
-            if(not clientedb):
-                print("no existe el cliente")
-                clientedb = Clients(**cliente)
-            else:
-                print("existe el cliente")
-                clientedb = update_model(clientedb, save_update=False, **cliente)
-            print(clientedb)
-            clientedb.save()
+            clientedb, created = Clients.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
             
     return HttpResponse('<h1> Get data from agenda pro successfully <span>&#128512;</span> </h1>')
 
