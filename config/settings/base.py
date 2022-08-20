@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # apps project
-    'payments',
-    'clients',
-    'bookings',
-    'receipts',
+    'apps.payments',
+    'apps.clients',
+    'apps.bookings',
+    'apps.receipts',
 ]
 
 MIDDLEWARE = [

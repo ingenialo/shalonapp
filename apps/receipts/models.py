@@ -1,5 +1,5 @@
 from django.db import models
-from payments.models import Payment
+from apps.payments.models import Payment
 
 # Create your models here.
 

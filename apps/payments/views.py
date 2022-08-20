@@ -3,9 +3,9 @@ from django.http import HttpResponse
 import requests
 import json
 from pprint import pprint
-from clients.models import Clients
-from payments.models import Payment
-from clients.serializer import ClientSerializer
+from apps.clients.models import Clients
+from apps.payments.models import Payment
+# from apps.clients.serializer import ClientSerializer
 
 def conv(value):
     if value:
