@@ -5,6 +5,7 @@ import json
 from pprint import pprint
 from apps.clients.models import Clients
 from apps.payments.models import Payment
+from config.utils.models import update_model
 
 def conv(value):
     if value:
@@ -26,28 +27,36 @@ def list_payments(request):
     f.close()
     if response.status_code == 200:
         for paymentjson in response_json["payments"]:
+            print("-----------------------------")
             clientejson=paymentjson["client"]
-            clientedb = Clients.objects.filter(identification_number=clientejson["identification_number"]).first()
+            clientedb = {}
+            clientedb = Clients.objects.filter(agenda_id=clientejson["id"]).first()
+            cliente = {
+                        'agenda_id' : conv(clientejson['id']),
+                        'first_name' : conv(clientejson['first_name']),
+                        'last_name' : conv(clientejson['last_name']),
+                        'email' : conv(clientejson['email']),
+                        'identification_number' : conv(clientejson['identification_number']),
+                        'phone' : conv(clientejson['phone']),
+                        'second_phone' : conv(clientejson['second_phone']),
+                        'age' : conv(clientejson['age']),
+                        'birth_day' : conv(clientejson['birth_day']),
+                        'birth_month' : conv(clientejson['birth_month']),
+                        'birth_year' : conv(clientejson['birth_year']),
+                        'record_number' : conv(clientejson['record_number']),
+                        'address' : conv(clientejson['address']),
+                        'district' : conv(clientejson['district']),
+                        'city' : conv(clientejson['city']),
+            }
             if(not clientedb):
-                cliente = {
-                            'agenda_id' : conv(clientejson['id']),
-                            'first_name' : conv(clientejson['first_name']),
-                            'last_name' : conv(clientejson['last_name']),
-                            'email' : conv(clientejson['email']),
-                            'identification_number' : conv(clientejson['identification_number']),
-                            'phone' : conv(clientejson['phone']),
-                            'second_phone' : conv(clientejson['second_phone']),
-                            'age' : conv(clientejson['age']),
-                            'birth_day' : conv(clientejson['birth_day']),
-                            'birth_month' : conv(clientejson['birth_month']),
-                            'birth_year' : conv(clientejson['birth_year']),
-                            'record_number' : conv(clientejson['record_number']),
-                            'address' : conv(clientejson['address']),
-                            'district' : conv(clientejson['district']),
-                            'city' : conv(clientejson['city']),
-                        }
-                clientdb = Clients(**cliente)
-                clientdb.save()
+                print("no existe el cliente")
+                clientedb = Clients(**cliente)
+            else:
+                print("existe el cliente")
+                clientedb = update_model(clientedb, save_update=False, **cliente)
+            print(clientedb)
+            clientedb.save()
+            
     return HttpResponse('<h1> Get data from agenda pro successfully <span>&#128512;</span> </h1>')
 
 
@@ -66,7 +75,7 @@ def list_payments(request):
         #             'change_amount' : conv(clientejson['change_amount']),
         #             'employee_code_id' : conv(clientejson['employee_code_id']),
         #             'employee_name' : clientejson['employee_name'],
-        #             'client' : clientdb,
+        #             'client' : clientedb,
                     
         #         }
                 
@@ -104,3 +113,4 @@ def test(request):
         print(pagodos)
         pagodos.delete()
     return HttpResponse('testing.....')
+    

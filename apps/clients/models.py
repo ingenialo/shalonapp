@@ -9,7 +9,7 @@ class Clients(CustomBaseModel):
     email = models.EmailField(unique=True,blank=True,null=True)
     identification_number = models.CharField(max_length=200, unique=True, blank=True,null=True) 
     phone = models.CharField(max_length=200, blank=True,null=True)
-    second_phone = models.CharField(max_length=200 ,unique=True, blank=True,null=True)
+    second_phone = models.CharField(max_length=200, blank=True,null=True)
     age = models.IntegerField(blank=True,null=True)
     birth_day = models.IntegerField(blank=True,null=True)
     birth_month = models.IntegerField(blank=True,null=True)

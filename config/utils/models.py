@@ -36,3 +36,16 @@ class CustomBaseModel(models.Model):
 
         get_latest_by = 'created_at'
         ordering = ['-created_at', '-updated_at']
+
+
+def update_model(model, save_update=True, **kwargs):
+    """Updates the specified model instance using the keyword arguments as the model
+    property attributes and values.
+    Example usage:
+        update_model(mymodel, save_update=True, **some_dictionary)
+    """
+    for attr, val in kwargs.items():
+        setattr(model, attr, val)
+    if save_update:
+        model.save()
+    return model
