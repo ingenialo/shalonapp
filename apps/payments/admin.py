@@ -14,14 +14,7 @@ from apps.clients.admin import ClientsInline
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    inlines = [BookingInline]
-    
-class PaymentAdmin(admin.ModelAdmin):
-    inlines = [ReceiptInline]
-
-class PaymentAdmin(admin.ModelAdmin):
-    inlines = [ClientsInline]
-
+    inlines = [BookingInline,ReceiptInline]
 
 # Register your models here.
     list_display = (
@@ -40,8 +33,3 @@ class PaymentAdmin(admin.ModelAdmin):
     # list_editable = ('phone_number', 'website', 'picture')
     search_fields = []        
     list_filter = []
-class PaymentInline(admin.TabularInline):
-    # Receipt in-line 
-    model = Payment
-    can_delete = False
-    verbose_name_plural = 'payments'

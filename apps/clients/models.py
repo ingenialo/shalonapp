@@ -18,6 +18,8 @@ class Clients(models.Model):
     address = models.CharField(max_length=200 ,blank=False)
     district = models.CharField(max_length=200 ,blank=True)
     city = models.CharField(max_length=200 ,blank=True)
-    
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
 
 # Create your models here.
