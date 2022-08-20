@@ -26,7 +26,7 @@ class PaymentAdmin(admin.ModelAdmin):
         'paid_amount',
         'change_amount',
         'employee_code_id',
-        'employee_name',
+        'employee_code_name',
         'client'
         )
     # list_display_links = ('pk')

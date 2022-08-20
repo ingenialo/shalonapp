@@ -5,15 +5,15 @@ from config.utils.models import CustomBaseModel
 class Payment(CustomBaseModel):
 
     # id = models.AutoField(auto_created=True)
-    agenda_id = models.IntegerField(null=True, unique=True)
-    payment_date = models.IntegerField(null=True)
-    location_id = models.IntegerField(null=True)
-    location_name = models.CharField(null=True, max_length=200)
-    amount = models.IntegerField(null=True)
-    paid_amount = models.IntegerField(null=True)
-    change_amount = models.IntegerField(null=True)
-    employee_code_id = models.IntegerField(null=True , blank=True)
-    employee_name = models.CharField(max_length=200)
+    agenda_id = models.IntegerField(blank=True,null=True, unique=True)
+    payment_date = models.DateTimeField(blank=True,null=True)
+    location_id = models.IntegerField(blank=True,null=True)
+    location_name = models.CharField(max_length=200, blank=True,null=True)
+    amount = models.IntegerField(blank=True,null=True)
+    paid_amount = models.IntegerField(blank=True,null=True)
+    change_amount = models.IntegerField(blank=True,null=True)
+    employee_code_id = models.IntegerField(blank=True,null=True)
+    employee_code_name = models.CharField(max_length=200, blank=True,null=True)
     client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
 
 

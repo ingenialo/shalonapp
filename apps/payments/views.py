@@ -22,12 +22,16 @@ def list_payments(request):
     }
     response = requests.get(url, headers=headers) 
     response_json =response.json()
+    
     f = open("./apps/payments/salida.json", "w")
     f.write(json.dumps(response_json))
     f.close()
+    
     if response.status_code == 200:
+        
         for paymentjson in response_json["payments"]:
             clientejson=paymentjson["client"]
+            
             cliente = {
                 'agenda_id' : conv(clientejson['id']),
                 'first_name' : conv(clientejson['first_name']),
@@ -47,31 +51,26 @@ def list_payments(request):
             }
             clientedb, created = Clients.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
             
+            pago = {
+                'agenda_id' : conv(paymentjson['id']),
+                'payment_date' : conv(paymentjson['payment_date']),
+                'location_id' : conv(paymentjson['location_id']),
+                'location_name' : conv(paymentjson['location_name']),
+                'amount' : conv(paymentjson['amount']),
+                'paid_amount' : conv(paymentjson['paid_amount']),
+                'change_amount' : conv(paymentjson['change_amount']),
+                'employee_code_id' : conv(paymentjson['employee_code_id']),
+                'employee_code_name' : conv(paymentjson['employee_code_name']),
+                'client' : clientedb,
+                
+            }
+            paymentdb, created = Payment.objects.update_or_create(agenda_id=paymentjson["id"],defaults=pago)
+
+      
     return HttpResponse('<h1> Get data from agenda pro successfully <span>&#128512;</span> </h1>')
 
 
- # paymentdb = Payment.objects.filter(agenda_id=clientejson["id"]).first()
-        
-        # if(not paymentdb):
-        #     print("no hay cliente")
-        #     print(clientejson['first_name'])
-        #     pago = {
-        #             'agenda_id' : clientejson['id'],
-        #             'payment_date' : conv(clientejson['payment_date']),
-        #             'location_id' : conv(clientejson['location_id']),
-        #             'location_name' : clientejson['location_name'],
-        #             'amount' : conv(clientejson['amount']),
-        #             'paid_amount' : conv(clientejson['paid_amount']),
-        #             'change_amount' : conv(clientejson['change_amount']),
-        #             'employee_code_id' : conv(clientejson['employee_code_id']),
-        #             'employee_name' : clientejson['employee_name'],
-        #             'client' : clientedb,
-                    
-        #         }
-                
-        #     paymentdb = Payments(**pago)
-        #     paymentdb.save()
-        #     print(paymentdb)
+       
  
 
 
