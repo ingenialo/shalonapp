@@ -31,8 +31,9 @@ class ReceiptAdmin(admin.ModelAdmin):
 
 # Register your models here.
     list_display = (
-        # 'id', 
-        # 'amount', 
+        'id', 
+        'agenda_id',
+        'amount', 
         'date', 
         'number', 
         'receipt_type',
