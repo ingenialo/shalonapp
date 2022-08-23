@@ -17,9 +17,8 @@ class Booking(CustomBaseModel):
     provider = models.CharField(max_length=200, blank=True,null=True)
     status = models.CharField(max_length=200, blank=True,null=True)
     agenda_receipt_id = models.IntegerField(blank=True,null=True, unique=True)
-    start = models.IntegerField(blank=True,null=True)
-    end = models.IntegerField(blank=True,null=True)
-    
+    start = models.DateTimeField(blank=True,null=True)
+    end = models.DateTimeField(blank=True,null=True)
     
 # class MockBooking (CustomBaseModel):
      

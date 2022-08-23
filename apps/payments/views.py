@@ -8,6 +8,7 @@ import json
 from pprint import pprint
 
 # import models
+from apps.bookings.models import Booking
 from apps.clients.models import Clients
 from apps.payments.models import Payment
 from apps.receipts.models import Receipt
@@ -85,6 +86,29 @@ def list_payments(request):
                         'receipt_type' : conv(receiptjson['receipt_type']), 
                     }
                     receiptdb, created = Receipt.objects.update_or_create(agenda_id=receiptjson["id"],defaults=recibo)
+
+                    for bookingsjson in paymentjson["bookings"]:
+                        print(bookingsjson)
+                        booking = {
+                            'Payment' : paymentdb,
+                            'Receipt' : receiptdb,
+                            'web_origin' : conv(bookingsjson['web_origin']),
+                            'provider_lock' : conv(bookingsjson['provider_lock']),
+                            'is_session' : conv(bookingsjson['is_session']),
+                            'is_session_booked' : conv(bookingsjson['is_session_booked']),
+                            'notes' : conv(bookingsjson['notes']),
+                            'price' : conv(bookingsjson['price']),
+                            'discount' : conv(bookingsjson['discount']),
+                            'service' : conv(bookingsjson['service']),
+                            'provider' : conv(bookingsjson['provider']),
+                            'status' : conv(bookingsjson['status']),
+                            'agenda_receipt_id' : conv(bookingsjson['receipt_id']),
+                            'start' : conv(bookingsjson['start']),
+                            'end' : conv(bookingsjson['end']), 
+                        }
+                        bookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=bookingsjson["receipt_id"],defaults=booking)
+
+
 
 
             # for paymentjson in response_json["payments"]:
