@@ -1,10 +1,16 @@
+# django imports
 from django.shortcuts import render
 from django.http import HttpResponse
+
+# third party imports
 import requests
 import json
 from pprint import pprint
+
+# import models
 from apps.clients.models import Clients
 from apps.payments.models import Payment
+from apps.receipts.models import Receipt
 from apps.payments.models import Transaction
 from config.utils.models import update_model
 
@@ -67,6 +73,19 @@ def list_payments(request):
                     
                 }
                 paymentdb, created = Payment.objects.update_or_create(agenda_id=paymentjson["id"],defaults=pago)
+                
+                for receiptjson in paymentjson["receipts"]:
+                    print(receiptjson)
+                    recibo = {
+                        'Payment' : paymentdb, 
+                        'agenda_id' : conv(receiptjson['id']), 
+                        'amount' : conv(receiptjson['amount']), 
+                        'date' : conv(receiptjson['date']), 
+                        'number' : conv(receiptjson['number']), 
+                        'receipt_type' : conv(receiptjson['receipt_type']), 
+                    }
+                    receiptdb, created = Receipt.objects.update_or_create(agenda_id=receiptjson["id"],defaults=recibo)
+
 
             # for paymentjson in response_json["payments"]:
             # productojson=paymentjson["products"]
