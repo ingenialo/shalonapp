@@ -31,50 +31,49 @@ def list_payments(request):
     if response.status_code == 200:
         
         for paymentjson in response_json["payments"]:
-            clientejson=paymentjson["client"]
-            
-            cliente = {
-                'agenda_id' : conv(clientejson['id']),
-                'first_name' : conv(clientejson['first_name']),
-                'last_name' : conv(clientejson['last_name']),
-                'email' : conv(clientejson['email']),
-                'identification_number' : conv(clientejson['identification_number']),
-                'phone' : conv(clientejson['phone']),
-                'second_phone' : conv(clientejson['second_phone']),
-                'age' : conv(clientejson['age']),
-                'birth_day' : conv(clientejson['birth_day']),
-                'birth_month' : conv(clientejson['birth_month']),
-                'birth_year' : conv(clientejson['birth_year']),
-                'record_number' : conv(clientejson['record_number']),
-                'address' : conv(clientejson['address']),
-                'district' : conv(clientejson['district']),
-                'city' : conv(clientejson['city']),
-            }
-            clientedb, created = Clients.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
-            
-            pago = {
-                'agenda_id' : conv(paymentjson['id']),
-                'payment_date' : conv(paymentjson['payment_date']),
-                'location_id' : conv(paymentjson['location_id']),
-                'location_name' : conv(paymentjson['location_name']),
-                'amount' : conv(paymentjson['amount']),
-                'paid_amount' : conv(paymentjson['paid_amount']),
-                'change_amount' : conv(paymentjson['change_amount']),
-                'employee_code_id' : conv(paymentjson['employee_code_id']),
-                'employee_code_name' : conv(paymentjson['employee_code_name']),
-                'client' : clientedb,
+            if(paymentjson):
+                clientejson=paymentjson["client"]
                 
-            }
-            paymentdb, created = Payment.objects.update_or_create(agenda_id=paymentjson["id"],defaults=pago)
+                cliente = {
+                    'agenda_id' : conv(clientejson['id']),
+                    'first_name' : conv(clientejson['first_name']),
+                    'last_name' : conv(clientejson['last_name']),
+                    'email' : conv(clientejson['email']),
+                    'identification_number' : conv(clientejson['identification_number']),
+                    'phone' : conv(clientejson['phone']),
+                    'second_phone' : conv(clientejson['second_phone']),
+                    'age' : conv(clientejson['age']),
+                    'birth_day' : conv(clientejson['birth_day']),
+                    'birth_month' : conv(clientejson['birth_month']),
+                    'birth_year' : conv(clientejson['birth_year']),
+                    'record_number' : conv(clientejson['record_number']),
+                    'address' : conv(clientejson['address']),
+                    'district' : conv(clientejson['district']),
+                    'city' : conv(clientejson['city']),
+                }
+                clientedb, created = Clients.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
+                
+                pago = {
+                    'agenda_id' : conv(paymentjson['id']),
+                    'payment_date' : conv(paymentjson['payment_date']),
+                    'agenda_location_id' : conv(paymentjson['location_id']),
+                    'location_name' : conv(paymentjson['location_name']),
+                    'amount' : conv(paymentjson['amount']),
+                    'paid_amount' : conv(paymentjson['paid_amount']),
+                    'change_amount' : conv(paymentjson['change_amount']),
+                    'employee_code_id' : conv(paymentjson['employee_code_id']),
+                    'employee_code_name' : conv(paymentjson['employee_code_name']),
+                    'client' : clientedb,
+                    
+                }
+                paymentdb, created = Payment.objects.update_or_create(agenda_id=paymentjson["id"],defaults=pago)
 
-            clientedb, created = Clients.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
-            
             # for paymentjson in response_json["payments"]:
-            productojson=paymentjson["products"]
-            if products in productojson:
-                pprint('no existe')
-            else: 
-                pprint(productojson)
+            # productojson=paymentjson["products"]
+            # if products in productojson:
+            #     pprint('no existe')
+            # else: 
+            #     pprint(productojson)
                 
                 # producto = {
                 #     'price' : conv(productodb['price']),
