@@ -5,6 +5,7 @@ from apps.payments.models import Payment
 from apps.bookings.admin import BookingInline
 from apps.receipts.admin import ReceiptInline
 from apps.clients.admin import ClientsInline
+from apps.products.admin import ProductInline
 
 
 
@@ -15,7 +16,7 @@ from apps.clients.admin import ClientsInline
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    inlines = [BookingInline,ReceiptInline, ]
+    inlines = [BookingInline, ProductInline, ReceiptInline]
 
 # Register your models here.
     list_display = (

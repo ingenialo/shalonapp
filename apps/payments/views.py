@@ -11,6 +11,7 @@ from pprint import pprint
 from apps.bookings.models import Booking
 from apps.clients.models import Clients
 from apps.payments.models import Payment
+from apps.products.models import Product
 from apps.receipts.models import Receipt
 from apps.payments.models import Transaction
 from config.utils.models import update_model
@@ -120,6 +121,26 @@ def list_payments(request):
                             'agenda_receipt_id' : conv(mockbookingsjson['receipt_id']),
                         }
                         mockbookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=mockbookingsjson["receipt_id"], service=mockbookingsjson["service"], defaults=mockbooking)
+
+                    for productjson in paymentjson["products"]:
+                        print(productjson)
+                        producto = {
+                            'Payment' : paymentdb,
+                            'Receipt' : receiptdb,
+                            'price' : conv(productjson['price']),
+                            'discount' : conv(productjson['discount']),
+                            'quantity' : conv(productjson['quantity']),
+                            'product' : conv(productjson['product']),
+                            'product_brand' : conv(productjson['product_brand']),
+                            'product_display' : conv(productjson['product_display']),
+                            'product_category' : conv(productjson['product_category']),
+                            'product_price' : conv(productjson['product_price']), 
+                            'agenda_receipt_id' : conv(productjson['receipt_id']), 
+                            'seller_details' : conv(productjson['seller_details']),
+                            
+                        }
+                        productdb, created = Product.objects.update_or_create(agenda_receipt_id=productjson["receipt_id"], product=productjson["product"], defaults=producto)
+
 
 
 
