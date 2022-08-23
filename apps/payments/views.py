@@ -106,7 +106,7 @@ def list_payments(request):
                             'start' : conv(bookingsjson['start']),
                             'end' : conv(bookingsjson['end']), 
                         }
-                        bookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=bookingsjson["receipt_id"],defaults=booking)
+                        bookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=bookingsjson["receipt_id"], service=bookingsjson["service"],defaults=booking)
 
                     for mockbookingsjson in paymentjson["mock_bookings"]:
                         print(mockbookingsjson)
