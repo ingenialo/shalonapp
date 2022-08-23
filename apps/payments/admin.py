@@ -9,12 +9,13 @@ from apps.clients.admin import ClientsInline
 
 
 
+
 @admin.register(Payment)
 
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    inlines = [BookingInline,ReceiptInline]
+    inlines = [BookingInline,ReceiptInline, ]
 
 # Register your models here.
     list_display = (

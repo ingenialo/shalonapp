@@ -3,7 +3,8 @@ from apps.payments.models import Payment
 from config.utils.models import CustomBaseModel
 
 class Receipt(CustomBaseModel):
-    Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
+    Payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True)
+    agenda_id = models.IntegerField(blank=True,null=True, unique=True)
     amount = models.IntegerField(blank=True,null=True)
     date = models.IntegerField(blank=True,null=True)
     number = models.IntegerField(blank=True,null=True)

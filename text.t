@@ -122,3 +122,20 @@ import request
         }
       ]
     },  ]
+
+"receipts": [{
+      "id": 13321249,
+      "amount": 25000.0,
+      "date": "2022-08-20",
+      "number": "26261",
+      "receipt_type": "Factura"
+    }]
+
+
+    "mock_bookings": [{
+      "price": 10000.0,
+      "discount": 33.33333333333334,
+      "service": "DEPILACION MICRO",
+      "provider": "T. YERALDIN CORTES",
+      "receipt_id": 13320431
+    }]
