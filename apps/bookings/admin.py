@@ -17,7 +17,7 @@ class BookingAdmin(admin.ModelAdmin):
         'Payment',
         'web_origin', 
         'is_session_booked', 
-        'agenda_id', 
+        'agenda_receipt_id', 
         'notes', 
         'provider_lock',
         'price',

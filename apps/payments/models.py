@@ -7,7 +7,7 @@ class Payment(CustomBaseModel):
     # id = models.AutoField(auto_created=True)
     agenda_id = models.IntegerField(blank=True,null=True, unique=True)
     payment_date = models.DateTimeField(blank=True,null=True)
-    location_id = models.IntegerField(blank=True,null=True)
+    agenda_location_id = models.IntegerField(blank=True,null=True)
     location_name = models.CharField(max_length=200, blank=True,null=True)
     amount = models.IntegerField(blank=True,null=True)
     paid_amount = models.IntegerField(blank=True,null=True)
