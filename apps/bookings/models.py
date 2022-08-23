@@ -16,7 +16,7 @@ class Booking(CustomBaseModel):
     service = models.CharField(max_length=200, blank=True,null=True)
     provider = models.CharField(max_length=200, blank=True,null=True)
     status = models.CharField(max_length=200, blank=True,null=True)
-    agenda_receipt_id = models.IntegerField(blank=True,null=True, unique=True)
+    agenda_receipt_id = models.IntegerField(blank=True,null=True)
     start = models.DateTimeField(blank=True,null=True)
     end = models.DateTimeField(blank=True,null=True)
     

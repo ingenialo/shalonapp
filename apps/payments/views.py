@@ -108,6 +108,18 @@ def list_payments(request):
                         }
                         bookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=bookingsjson["receipt_id"],defaults=booking)
 
+                    for mockbookingsjson in paymentjson["mock_bookings"]:
+                        print(mockbookingsjson)
+                        mockbooking = {
+                            'Payment' : paymentdb,
+                            'Receipt' : receiptdb,
+                            'price' : conv(mockbookingsjson['price']),
+                            'discount' : conv(mockbookingsjson['discount']),
+                            'service' : conv(mockbookingsjson['service']),
+                            'provider' : conv(mockbookingsjson['provider']),
+                            'agenda_receipt_id' : conv(mockbookingsjson['receipt_id']),
+                        }
+                        mockbookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=mockbookingsjson["receipt_id"], service=mockbookingsjson["service"], defaults=mockbooking)
 
 
 

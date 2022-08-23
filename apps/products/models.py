@@ -19,6 +19,6 @@ class Product(CustomBaseModel):
     product_display = models.CharField(max_length=200, blank=True,null=True)
     product_category = models.CharField(max_length=200, blank=True,null=True)
     product_price = models.IntegerField(blank=True,null=True)
-    agenda_receipt_id = models.IntegerField(blank=True,null=True, unique=True)
+    agenda_receipt_id = models.IntegerField(blank=True,null=True)
     seller_details = models.CharField(max_length=200, blank=True,null=True)
     
