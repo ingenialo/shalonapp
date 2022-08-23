@@ -40,6 +40,8 @@ def list_payments(request):
         
         for paymentjson in response_json["payments"]:
             if(paymentjson):
+                print("------------------------------------------------------------")
+                print(paymentjson['id'])
                 clientejson=paymentjson["client"]
                 
                 cliente = {
@@ -141,48 +143,29 @@ def list_payments(request):
                         }
                         productdb, created = Product.objects.update_or_create(agenda_receipt_id=productjson["receipt_id"], product=productjson["product"], defaults=producto)
 
-
-
-
-            # for paymentjson in response_json["payments"]:
-            # productojson=paymentjson["products"]
-            # if products in productojson:
-            #     pprint('no existe')
-            # else: 
-            #     pprint(productojson)
-                
-                # producto = {
-                #     'price' : conv(productodb['price']),
-                #     'discount' : conv(productodb['discount']),
-                #     'quantity' : conv(productodb['quantity']),
-                #     'product' : conv(productodb['product']),
-                #     'product_brand' : conv(productodb['product_brand']),
-                #     'product_display' : conv(productodb['product_display']),
-                #     'product_category' : conv(productodb['product_category']),
-                #     'product_price' : conv(productodb['product_price']), 
-                #     'agenda_id' : conv(productodb['id']), 
-                #     'seller_details' : conv(productodb['seller_details']),
-                    
-                # }
-                # productodb, created = Product.objects.update_or_create(agenda_id=productojson["id"],defaults=producto)
-
-            # productodb, created = Product.objects.update_or_create(agenda_id=clientejson["id"],defaults=cliente)
-            
-            # for downpaymentjson in paymentjson["down_payment"]:
-            #     for paymenttransactionsjson in downpaymentjson["payment_transactions"]:
-            #         transacion = {
-            #             'Payment' : paymentdb,
-            #             'number' : conv(paymenttransactionsjson['number']),
-            #             'amount' : conv(paymenttransactionsjson['amount']),
-            #             'installments' : conv(paymenttransactionsjson['installments']),
-            #             'payment_method' : conv(paymenttransactionsjson['payment_method']),
-            #             'payment_method_type' : conv(paymenttransactionsjson['payment_method_type']),
-            #             'bank' : conv(paymenttransactionsjson['bank']),
-                        
-            #         }
-            #         transationdb, created = Transaction.objects.update_or_create(agenda_id=paymentjson["id"],defaults=transacion)
-                    
-                    
+                    for downpaymentjson in paymentjson["down_payment"]:
+                        for paymenttransactionsjson in downpaymentjson["payment_transactions"]:
+                            transacion = {
+                                'Payment' : paymentdb,
+                                'number' : conv(paymenttransactionsjson['number']),
+                                'amount' : conv(paymenttransactionsjson['amount']),
+                                'installments' : conv(paymenttransactionsjson['installments']),
+                                'payment_method' : conv(paymenttransactionsjson['payment_method']),
+                                'payment_method_type' : conv(paymenttransactionsjson['payment_method_type']),
+                                'bank' : conv(paymenttransactionsjson['bank']),
+                            }
+                            print(transacion)
+                            transationdb, created = Transaction.objects.update_or_create(
+                                number=conv(paymenttransactionsjson["number"]),
+                                amount=conv(paymenttransactionsjson["amount"]),
+                                installments=conv(paymenttransactionsjson["installments"]),
+                                payment_method=conv(paymenttransactionsjson["payment_method"]),
+                                payment_method_type=conv(paymenttransactionsjson["payment_method_type"]),
+                                bank=conv(paymenttransactionsjson["bank"]),
+                                defaults=transacion
+                            )
+                            
+                            
     return HttpResponse('<h1> Get data from agenda pro successfully <span>&#128512;</span> </h1>')
 
 
