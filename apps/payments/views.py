@@ -31,8 +31,9 @@ def list_payments(request):
     }
     response = requests.get(url, headers=headers) 
     response_json =response.json()
+   
     
-    f = open("./apps/payments/salida.json", "w")
+    f = open("./apps/payments/salida1.json", "w")
     f.write(json.dumps(response_json))
     f.close()
     
@@ -41,7 +42,7 @@ def list_payments(request):
         for paymentjson in response_json["payments"]:
             if(paymentjson):
                 print("------------------------------------------------------------")
-                print(paymentjson['id'])
+                pprint(paymentjson['id'])
                 clientejson=paymentjson["client"]
                 
                 cliente = {
@@ -79,7 +80,7 @@ def list_payments(request):
                 paymentdb, created = Payment.objects.update_or_create(agenda_id=paymentjson["id"],defaults=pago)
                 
                 for receiptjson in paymentjson["receipts"]:
-                    print(receiptjson)
+                    pprint(receiptjson)
                     recibo = {
                         'Payment' : paymentdb, 
                         'agenda_id' : conv(receiptjson['id']), 
@@ -91,7 +92,7 @@ def list_payments(request):
                     receiptdb, created = Receipt.objects.update_or_create(agenda_id=receiptjson["id"],defaults=recibo)
 
                     for bookingsjson in paymentjson["bookings"]:
-                        print(bookingsjson)
+                        pprint(bookingsjson)
                         booking = {
                             'Payment' : paymentdb,
                             'Receipt' : receiptdb,
@@ -112,7 +113,7 @@ def list_payments(request):
                         bookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=bookingsjson["receipt_id"], service=bookingsjson["service"],defaults=booking)
 
                     for mockbookingsjson in paymentjson["mock_bookings"]:
-                        print(mockbookingsjson)
+                        pprint(mockbookingsjson)
                         mockbooking = {
                             'Payment' : paymentdb,
                             'Receipt' : receiptdb,
@@ -125,7 +126,7 @@ def list_payments(request):
                         mockbookingdb, created = Booking.objects.update_or_create(agenda_receipt_id=mockbookingsjson["receipt_id"], service=mockbookingsjson["service"], defaults=mockbooking)
 
                     for productjson in paymentjson["products"]:
-                        print(productjson)
+                        pprint(productjson)
                         producto = {
                             'Payment' : paymentdb,
                             'Receipt' : receiptdb,
@@ -154,7 +155,7 @@ def list_payments(request):
                                 'payment_method_type' : conv(paymenttransactionsjson['payment_method_type']),
                                 'bank' : conv(paymenttransactionsjson['bank']),
                             }
-                            print(transacion)
+                            pprint(transacion)
                             transationdb, created = Transaction.objects.update_or_create(
                                 number=conv(paymenttransactionsjson["number"]),
                                 amount=conv(paymenttransactionsjson["amount"]),
@@ -169,8 +170,57 @@ def list_payments(request):
     return HttpResponse('<h1> Get data from agenda pro successfully <span>&#128512;</span> </h1>')
 
 
-       
- 
+def testsiigo(request):
+    
+    username = 'shalon.lashbrow.admon@gmail.com'
+    access_key = 'MmNjMjZhMzAtMDNkNS00MDg5LTlmNDItMmQyNDJhZGZmNjdmOn1pWEI+NzQ5aEY='
+  
+    
+    url = "https://api.siigo.com/auth"
+    payload = {'username' : username, 'access_key' : access_key}
+    headers = {'Accept' : 'application/json'}
+
+    response = requests.post(url, json=payload, headers=headers)
+    print(response)
+    if response.status_code == 200:
+        response_json = response.json()
+        access_token = response_json['access_token']
+        # print(access_token)
+    
+    url = "https://api.siigo.com/v1/customers"
+    headers = {
+    'Accept' : 'application/json',
+    'Authorization':access_token
+    }
+    response = requests.get(url, headers=headers) 
+    response_json =response.json()
+    
+    f = open("./apps/payments/salida2.json", "w")
+    f.write(json.dumps(response_json))
+    f.close()
+    
+    
+    # pprint(response_json)
+    if response.status_code == 200:
+        
+        for resposejson in response_json['results']:
+            if(resposejson):
+                print("------------------------------------------------------------")
+                pprint(resposejson)
+            
+        # for resposejson in response_json:
+        #     if(resposejson):
+        #         print("----------------------------------------------------------------------------")
+        #         pprint(resposejson)
+      
+        
+
+    
+
+
+    return HttpResponse('testing')
+    
+
 
 
 def test(request):

@@ -25,6 +25,7 @@ urlpatterns = [
     path('payments/', views.list_payments),
     path('test/', views.test),
     path('celery-test/', test_celery),
+    path('testsiigo/', views.testsiigo),
 ]
 
 
