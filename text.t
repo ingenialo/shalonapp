@@ -15,6 +15,39 @@ import request
 
 
 
+{
+    'active': True,
+    'address': {'address': 'CLL 1 B 55 25',
+                'city': {'city_code': '76001',
+                        'city_name': 'Cali',
+                        'country_code': 'Co',
+                        'country_name': 'Colombia',
+                        'state_code': '76',
+                        'state_name': 'Valle del Cauca'},
+                'postal_code': ''},
+    'branch_office': 0,
+    'check_digit': '',
+    'contacts': [{'email': 'manuelayanguass14@gmail.com',
+                'first_name': 'MANUELA',
+                'last_name': 'YANGUAS RUIZ',
+                'phone': {'number': '3502026662'}}],
+    'fiscal_responsibilities': [{'code': 'R-99-PN', 'name': 'No aplica - Otros'}],
+    'id': '97e9e726-276f-47da-9d04-2054ef4f1be1',
+    'id_type': {'code': '13', 'name': 'Cédula de ciudadanía'},
+    'identification': '1112044130',
+    'metadata': {'created': '2022-08-25T14:36:21.617',
+                'last_updated': '2022-08-25T14:37:04.517'},
+    'name': ['MANUELA', 'YANGUAS RUIZ'],
+    'person_type': 'Person',
+    'phones': [{'number': '3502026662'}],
+    'type': 'Customer',
+    'vat_responsible': False
+    }
+
+
+
+
+
 
 
 
