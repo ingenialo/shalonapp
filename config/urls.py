@@ -15,23 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apps.payments import views 
+from apps.payments import views
 # from clients import views
-# from . import views 
+# from . import views
 from .views import test_celery
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('payments/', views.list_payments),
-    path('test/', views.test),
     path('celery-test/', test_celery),
     path('testsiigo/', views.testsiigo),
+    path('testsiigo_create_client/', views.test_siigo_create_client),
+
 ]
 
 
-# print('imprimiendo_desde_la_url')
-# print('holi')
+# to do:
 
-# from django.conf import settings
-# print(base.BASE_DIR)
-# # print()
+# crear un modelo company:
+# nombre de shalon
+# nit
+# telefono
+# direccion
+# agenda_pro_token es un string largo
+# siigo_username
+# siigo_access_key
+# siigo_token
+
+# Crear una factura desde postman al endpoint de prueba Ojo

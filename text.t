@@ -1,5 +1,90 @@
 import request 
 
+datos de factura que se solicitan
+{
+  "document": {
+    "id": 13643
+  },
+  "date": "2015-12-15",
+  "customer": {
+    # identification el numero de cedula del cliente
+    "identification": "123234567",
+    "branch_office": 0
+  },
+#   cost_center es el id del local donde se realizo la compra
+  "cost_center": 185,
+#  seller es el codigo de cajero o persona autorizada
+  "seller": 352,
+  "observations": "Observaciones",
+  "items": [
+    {
+      "code": "CREMACICATRIZACIONMICRO",
+      "quantity": 1,
+      "price": 22000,
+      "discount": 0.0,
+   
+    }
+  ],
+  "payments": [
+    {
+        # este id es de la forma de pago
+      "id": 3142,
+      "value": 22000,
+      "due_date": "2021-03-19"
+    }
+  ],
+}
+
+
+datos que se crean para la factura al incluir los 
+
+
+{
+  "id": "f0f4724f-e8de-4662-b467-c5dea642e69b",
+  "document": {
+    "id": 13643
+  },
+  "number": 1,
+  "name": "FV-1-1",
+  "date": "2015-12-15",
+  "customer": {
+    "id": "b7d74253-4488-4fd6-884b-2922fca561d5",
+    "identification": "123234567",
+    "branch_office": 0
+  },
+  "cost_center": 185,
+  "seller": 352,
+  "total": 22000,
+  "balance": 0,
+  "observations": "Observaciones",
+  "items": [
+    {
+      "id": "214c3c47-0b2a-4bcb-9c38-b9b9324048cd",
+      "code": "CREMACICATRIZACIONMICRO",
+      "quantity": 1,
+      "price": 22000,
+      "description": "CREMA CICATRIZACION MICROPIGMENTACION",
+      "total": 22000
+    }
+  ],
+  "payments": [
+    {
+      "id": 3142,
+      "name": "Efectivo",
+      "value": 22000
+    }
+  ],
+  "mail": {
+    "status": "not_sent",
+    "observations": "The invoice has not been sent by mail"
+  },
+  "metadata": {
+    "created": "2022-08-30T01:22:29.3954206+00:00"
+  }
+}
+
+
+
 
 # if __name__=='__main__':
 #     url:'https://app.agendapro.com/company_settings/integration'
