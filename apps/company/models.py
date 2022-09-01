@@ -18,4 +18,6 @@ class Company(CustomBaseModel):
     siigo_username = models.CharField(max_length=100)
     siigo_access_key = models.CharField(max_length=200)
     siigo_access_token = models.CharField(max_length=2000)
+    agenda_pro_host=models.CharField(max_length=100, null=True)
+    siigo_host=models.CharField(max_length=100, null=True)
 

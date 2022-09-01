@@ -12,6 +12,7 @@ from pprint import pprint
 # import models
 from apps.bookings.models import Booking
 from apps.clients.models import Clients
+from apps.company.models import Company
 from apps.payments.models import Payment
 from apps.products.models import Product
 from apps.receipts.models import Receipt
@@ -29,10 +30,12 @@ def conv(value):
 
 
 def list_payments(request):
-    url = "https://agendapro.com/api/public/v1/payments"
+    company = Company.objects.first()
+    print(company)
+    url = f"{company.agenda_pro_host}/payments/"
     headers = {
         "Accept": "application/json",
-        "Authorization": "Basic MWk4c3RicDY6dGd5ZWRqd3FtZjM0ejNwdGttNjM0bTJid2llM28zanBjZWhtbWI0Zg=="
+        "Authorization": company.agenda_pro_token
     }
     response = requests.get(url, headers=headers)
     response_json = response.json()
@@ -183,8 +186,9 @@ def list_payments(request):
 
 
 def generate_token():
-    username = 'shalon.lashbrow.admon@gmail.com'
-    access_key = 'MmNjMjZhMzAtMDNkNS00MDg5LTlmNDItMmQyNDJhZGZmNjdmOn1pWEI+NzQ5aEY='
+    company = Company.objects.first()
+    username = company.siigo_username
+    access_key = company.siigo_access_key
 
     url = "https://api.siigo.com/auth"
     payload = {'username': username, 'access_key': access_key}
@@ -196,27 +200,39 @@ def generate_token():
         response_json = response.json()
         access_token = response_json['access_token']
         print(access_token)
+        company.siigo_access_token = access_token
+        company.save() 
         return access_token
     return None
 
 
-def testsiigo(request):
 
-    access_token = generate_token()
+def testsiigo(request):
+    company = Company.objects.first()
+
+    # access_token = generate_token()
     # print(access_token)
     # print('---------------------------------------------------------------------')
 
     url = "https://api.siigo.com/v1/customers"
     headers = {
         'Accept': 'application/json',
-        'Authorization': access_token
+        'Authorization': company.siigo_access_token
     }
     response = requests.get(url, headers=headers)
-    response_json = response.json()
+    print(response.status_code)
+    if response.status_code == 200:
+        response_json = response.json()
 
-    f = open("./apps/payments/salida2.json", "w")
-    f.write(json.dumps(response_json))
-    f.close()
+        f = open("./apps/payments/salida2.json", "w")
+        f.write(json.dumps(response_json))
+        f.close()
+        return HttpResponse('<h1> testsiigo successfully <span>&#128512;</span> </h1>')
+    elif response.status_code==401:
+        access_token = generate_token()
+        return HttpResponse(f'<h1> se regenero el token <span>&#128512;</span> </h1> <p>{access_token}</p>')
+    else:
+        return HttpResponse('<h1> no paso </span> </h1>')
 
 
 def test_siigo_create_client(request):
