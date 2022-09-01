@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.receipts',
     'apps.products',
     'apps.siigos',
+    'apps.company',
 ]
 
 MIDDLEWARE = [
