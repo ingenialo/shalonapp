@@ -24,23 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('payments/', views.list_payments),
     path('celery-test/', test_celery),
-    path('testsiigo/', views.testsiigo),
-    path('testsiigo_create_client/', views.test_siigo_create_client),
     path('siigo/', include('apps.siigos.urls'), name='siigo'),
 
 ]
-
-
-# to do:
-
-# crear un modelo company:
-# nombre de shalon
-# nit
-# telefono
-# direccion
-# agenda_pro_token es un string largo
-# siigo_username
-# siigo_access_key
-# siigo_token
-
-# Crear una factura desde postman al endpoint de prueba Ojo
