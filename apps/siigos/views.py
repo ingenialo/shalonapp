@@ -28,8 +28,22 @@ def generate_token():
 
 
 def get_document_type(request):
-    
-    return HttpResponse('<h1> get_document_type successfully <span>&#128512;</span> </h1>')
+    company = Company.objects.first()
+    url = f'{company.siigo_host}/payment-types?document_type=FV'
+    headers = {
+        'Accept': 'application/json',
+        'Authorization': company.siigo_access_token
+    }
+    response = requests.get(url, headers=headers)
+    response_json = response.json()
+    if response.status_code == 200:
+        # aqui se debe guardar los documents type en la db 
+        return JsonResponse(response_json, safe=False)
+    elif response.status_code==401:
+        access_token = generate_token()
+        return HttpResponse(f'<h1> se regenero el token <span>&#128512;</span> </h1> <p>{access_token}</p>')
+    else:
+        return JsonResponse(response_json)
 
 
 def get_customers(request):
