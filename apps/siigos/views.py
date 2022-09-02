@@ -5,6 +5,7 @@ from pprint import pprint
 
 
 from apps.company.models import Company
+from .models import DocumentType
 
 def generate_token():
     company = Company.objects.first()
@@ -28,6 +29,7 @@ def generate_token():
 
 
 def get_document_type(request):
+    
     company = Company.objects.first()
     url = f'{company.siigo_host}/payment-types?document_type=FV'
     headers = {
@@ -35,9 +37,25 @@ def get_document_type(request):
         'Authorization': company.siigo_access_token
     }
     response = requests.get(url, headers=headers)
-    response_json = response.json()
+    
     if response.status_code == 200:
-        # aqui se debe guardar los documents type en la db 
+        response_json = response.json()
+        documents_types = response_json
+        # pprint(documents_types)
+        for document_type in documents_types:
+            
+            documento ={
+                "siigo_id": document_type['id'],
+                "name": document_type['name'],
+                "type": document_type['type'],
+                "active": document_type['active'],
+                "due_date": None,
+            }
+            pprint(documento)
+            documentodb, created = DocumentType.objects.update_or_create(
+                siigo_id=document_type['id'], 
+                defaults=documento
+            )
         return JsonResponse(response_json, safe=False)
     elif response.status_code==401:
         access_token = generate_token()
