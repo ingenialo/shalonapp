@@ -19,6 +19,9 @@
 -   Administrative commands
 ``` docker-compose run --rm django COMAND ```
 
+-   For Debugging
+``` docker-compose run --rm --service-ports django ```
+
 example:
 
 ``` docker-compose run --rm django python manage.py createsuperuser ```
