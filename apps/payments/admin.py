@@ -41,6 +41,8 @@ class PaymentAdmin(admin.ModelAdmin):
         'client',
         'amount', 
         'paid_amount',
+        'facturado',
+        'errores',
         )
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')
