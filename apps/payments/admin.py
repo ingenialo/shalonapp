@@ -47,5 +47,5 @@ class PaymentAdmin(admin.ModelAdmin):
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')
     search_fields = []        
-    list_filter = []
+    list_filter = ['location_name','facturado']
     ordering=["-payment_date"]

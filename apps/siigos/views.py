@@ -6,6 +6,7 @@ from pprint import pprint
 
 from apps.company.models import Company
 from .models import DocumentType
+from apps.payments.models import Payment
 
 def generate_token():
     company = Company.objects.first()
@@ -142,6 +143,13 @@ def test_siigo_create_client(request):
     pprint(response)
     return HttpResponse('<h1> test_siigo_create_client <span>&#128512;</span> </h1>')
 
+def test_siigo_facturar(request):
+    payments = Payment.objects.filter(facturado=False)
+    for payment in payments:
+        client = payment.client
+        print(client)
+    breakpoint()
+    return HttpResponse('<h1> test_siigo_facturar <span>&#128512;</span> </h1>')
 
 def test_siigo_create_factura(request):
 
