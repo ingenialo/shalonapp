@@ -56,12 +56,18 @@ def list_payments(request):
                         print("------------------------------------------------------------")
                         pprint(paymentjson['id'])
                         clientejson = paymentjson["client"]
+                        urlclient =f"{company.agenda_pro_host}/clients/{clientejson['id']}"
+                        responseclient = requests.get(urlclient, headers=headers)
+                        clientejson = responseclient.json()
+                        tipo_docto=[x for x in clientejson['custom_attributes'] if x["custom_attribute_id"] == 12442]
+                        print(tipo_docto[0]["value"])
 
                         cliente = {
                             'agenda_id': conv(clientejson['id']),
                             'first_name': conv(clientejson['first_name']),
                             'last_name': conv(clientejson['last_name']),
                             'email': conv(clientejson['email']),
+                            'document_type': conv(tipo_docto[0]["value"]),
                             'identification_number': conv(clientejson['identification_number']),
                             'phone': conv(clientejson['phone']),
                             'second_phone': conv(clientejson['second_phone']),

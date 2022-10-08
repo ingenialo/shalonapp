@@ -7,6 +7,7 @@ class Clients(CustomBaseModel):
     first_name = models.CharField(max_length=200,blank=True,null=True)
     last_name = models.CharField(max_length=200,blank=True,null=True)
     email = models.EmailField(blank=True,null=True)
+    document_type = models.CharField(max_length=100, blank=True,null=True) 
     identification_number = models.CharField(max_length=200, unique=True, blank=True,null=True) 
     phone = models.CharField(max_length=200, blank=True,null=True)
     second_phone = models.CharField(max_length=200, blank=True,null=True)
