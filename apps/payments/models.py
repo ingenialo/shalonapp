@@ -28,7 +28,7 @@ class Payment(CustomBaseModel):
 
 class Transaction(CustomBaseModel):
     Payment = models.ForeignKey(Payment, on_delete=models.CASCADE)
-    number = models.IntegerField(blank=True,null=True)
+    ticker_number = models.CharField(max_length=200, blank=True,null=True)
     amount = models.IntegerField(blank=True,null=True)
     installments = models.IntegerField(blank=True,null=True)
     payment_method = models.CharField(max_length=200)

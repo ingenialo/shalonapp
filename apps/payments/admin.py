@@ -20,7 +20,7 @@ class TransactionAdmin(admin.ModelAdmin):
     list_display = (
             'id',
             'Payment',
-            'number',
+            'ticker_number',
             'amount',
             'installments',
             'payment_method',

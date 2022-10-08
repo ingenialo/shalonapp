@@ -172,7 +172,7 @@ def list_payments(request):
                                 for paymenttransactionsjson in downpaymentjson["payment_transactions"]:
                                     transacion = {
                                         'Payment': paymentdb,
-                                        'number': conv(paymenttransactionsjson['number']),
+                                        'ticker_number': conv(paymenttransactionsjson['number']),
                                         'amount': conv(paymenttransactionsjson['amount']),
                                         'installments': conv(paymenttransactionsjson['installments']),
                                         'payment_method': conv(paymenttransactionsjson['payment_method']),
