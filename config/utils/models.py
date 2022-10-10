@@ -19,14 +19,14 @@ class CustomBaseModel(models.Model):
         null=True,
         blank=True,
         auto_now_add=True,
-        help_text='Date time on which the object was created.'
+        help_text='fecha cuando fue creado el registro.',
     )
     updated_at = models.DateTimeField(
         'updated at',
         null=True,
         blank=True,
         auto_now=True,
-        help_text='Date time on which the object was last modified.'
+        help_text='fecha cuando fue actualizado el registro.',
     )
 
     class Meta:

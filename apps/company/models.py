@@ -1,7 +1,12 @@
 from django.db import models
 from config.utils.models import CustomBaseModel
+from django.utils.translation import gettext_lazy as _
 
 class Company(CustomBaseModel):
+    class Meta:
+        verbose_name = _('empresa')
+        verbose_name_plural = _('empresas')
+
     nombre = models.CharField(max_length=100)
     razon_social = models.CharField(max_length=100)
     nit = models.CharField(max_length=100)

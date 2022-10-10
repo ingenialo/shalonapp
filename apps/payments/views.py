@@ -181,14 +181,11 @@ def list_payments(request):
                                     }
                                     pprint(transacion)
                                     transationdb, created = Transaction.objects.update_or_create(
-                                        number=conv(paymenttransactionsjson["number"]),
+                                        ticker_number=conv(paymenttransactionsjson["number"]),
                                         amount=conv(paymenttransactionsjson["amount"]),
-                                        installments=conv(
-                                            paymenttransactionsjson["installments"]),
-                                        payment_method=conv(
-                                            paymenttransactionsjson["payment_method"]),
-                                        payment_method_type=conv(
-                                            paymenttransactionsjson["payment_method_type"]),
+                                        installments=conv(paymenttransactionsjson["installments"]),
+                                        payment_method=conv(paymenttransactionsjson["payment_method"]),
+                                        payment_method_type=conv(paymenttransactionsjson["payment_method_type"]),
                                         bank=conv(paymenttransactionsjson["bank"]),
                                         defaults=transacion
                                     )

@@ -27,7 +27,7 @@ class TransactionAdmin(admin.ModelAdmin):
             'payment_method_type',
             'bank',
         )
-    search_fields = []        
+    search_fields = []
     list_filter = []
     ordering=["-Payment"]
 
@@ -35,17 +35,25 @@ class TransactionAdmin(admin.ModelAdmin):
 class PaymentAdmin(admin.ModelAdmin):
     inlines = [BookingInline, ProductInline, ReceiptInline, TransactionInline]
     list_display = (
+        'id',
         'agenda_id', 
         'payment_date', 
         'location_name', 
         'client',
         'amount', 
-        'paid_amount',
         'facturado',
         'errores',
         )
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')
-    search_fields = []        
-    list_filter = ['location_name','facturado']
+    # search_fields = ["client"]
+    list_filter = ['location_name','facturado','payment_date']
+    date_hierarchy = 'payment_date'
     ordering=["-payment_date"]
+    actions = ['facturar']
+    save_on_top = True
+    change_list_template = "payments/admin/snippets_change_list.html"
+    def facturar(self, request, queryset):
+        print("-------------------")
+        print(request.POST)
+        

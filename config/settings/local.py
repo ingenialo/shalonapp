@@ -11,3 +11,6 @@ STATICFILES_DIRS = [
 # Celery
 # CELERY_TASK_ALWAYS_EAGER = True
 # CELERY_TASK_EAGER_PROPAGATES = True
+print("-------------------")
+print(BASE_DIR.parent)
+print(TEMPLATES)
