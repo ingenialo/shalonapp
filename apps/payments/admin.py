@@ -50,10 +50,13 @@ class PaymentAdmin(admin.ModelAdmin):
     list_filter = ['location_name','facturado','payment_date']
     date_hierarchy = 'payment_date'
     ordering=["-payment_date"]
-    actions = ['facturar']
+    actions = ['facturar', 'actualizar_con_agenda_pro']
     save_on_top = True
     change_list_template = "payments/admin/snippets_change_list.html"
     def facturar(self, request, queryset):
         print("-------------------")
         print(request.POST)
-        
+    
+    def actualizar_con_agenda_pro(self, request, queryset):
+        print("-------------------")
+        print(request.POST)

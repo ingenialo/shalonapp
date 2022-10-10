@@ -2,24 +2,20 @@
 
 
 {% block object-tools %}
-
-    
-   
-    <form id="get-payments-form" method="POST">
+    <form id="get-payments-form" method="POST" action="/payments/">
         {% csrf_token %}
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div class="row">
                     <div class="col-sm-3">
-                        <label for="fromDate">Dia</label>
-                        <input type="date" name="fromDate" value="" class=" form-control  ">
+                        <label for="date">Dia</label>
+                        <input id="date-field" type="date" name="date" value="" class=" form-control  ">
                     </div>
-                    {% comment %} <div class="col-sm-3">
-                        <label for="fromDate">Hasta</label>
-                        <input type="date" name="toDate" value="" class=" form-control  ">
-                    </div> {% endcomment %}
                     <div class="col-sm-6 mt-auto">
-                        <button class="btn btn-secondary" type="submit">Traer Pagos</button>
+                        <button class="btn btn-secondary" type="submit">
+                            <span style="display:none" id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Traer Pagos
+                        </button>
                     </div>
                 </div>
             </div>
@@ -30,8 +26,10 @@
  {{ block.super }}
 
  <script>
+
+ document.getElementById('date-field').valueAsDate = new Date();
  let myform = document.querySelector("#get-payments-form").onsubmit = function (event) {
-    alert("Replaced submit handler");
+    document.getElementById("spinner").style.display = "inline-block";
     return true;
 };
 
