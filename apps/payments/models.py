@@ -20,7 +20,10 @@ class Payment(CustomBaseModel):
     employee_code_name = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('empleado codigo_nombre'))
     client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
     facturado = models.BooleanField(default=False)
+    facturable_electronica = models.BooleanField(default=False)
     errores = models.CharField(max_length=2000, blank=True,null=True)
+
+
     def __str__(self):
         return f'{self.id}'
    

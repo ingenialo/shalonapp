@@ -24,7 +24,7 @@ def getPaymentsByDate(request):
         fecha = date.strftime('%y-%m-%d')
     
     try:
-        #getPaymentsFromAgendaPro(fecha)
+        getPaymentsFromAgendaPro(fecha)
         if request.method == "GET":
             return HttpResponse(f'<h1> Get data from {fecha} in agenda pro successfully <span>&#128512;</span> </h1>')
 

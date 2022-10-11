@@ -139,12 +139,17 @@ def storePaymentJson(paymentjson, company, headers):
             
             down_json = []
             if "down_payment" in paymentjson:
+                # print("si down")
                 down_json = paymentjson["down_payment"]
             else:
+                # print("no down")
                 down_json = paymentjson["down_payments"]
-
+            is_facturable = False
+            
             for downpaymentjson in down_json:
                 for paymenttransactionsjson in downpaymentjson["payment_transactions"]:
+                    # if(paymentdb.agenda_id==13847578):
+                    #     print(paymenttransactionsjson)
                     transacion = {
                         'Payment': paymentdb,
                         'ticker_number': conv(paymenttransactionsjson['number']),
@@ -156,6 +161,7 @@ def storePaymentJson(paymentjson, company, headers):
                     }
                     # pprint(transacion)
                     transationdb, created = Transaction.objects.update_or_create(
+                        Payment = paymentdb.id,
                         ticker_number=conv(paymenttransactionsjson["number"]),
                         amount=conv(paymenttransactionsjson["amount"]),
                         installments=conv(paymenttransactionsjson["installments"]),
@@ -164,6 +170,14 @@ def storePaymentJson(paymentjson, company, headers):
                         bank=conv(paymenttransactionsjson["bank"]),
                         defaults=transacion
                     )
+                    method = transationdb.payment_method
+                    # print(method)
+                    if(method == "Tarjeta de Débito" or method == "Tarjeta de Crédito" or method == "Transferencia"):
+                        # print("facturable")
+                        is_facturable = True
+            paymentdb.facturable_electronica = is_facturable
+            paymentdb.save()
+
 
 
 def getPaymentsFromAgendaPro(fecha):

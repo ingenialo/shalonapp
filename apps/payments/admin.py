@@ -47,6 +47,7 @@ class PaymentAdmin(admin.ModelAdmin):
         'client',
         'amount', 
         'facturado',
+        'facturable_electronica',
         'errores',
         )
     # list_display_links = ('pk')
@@ -58,13 +59,10 @@ class PaymentAdmin(admin.ModelAdmin):
     actions = ['facturar', 'actualizar_con_agenda_pro']
     save_on_top = True
     change_list_template = "payments/admin/snippets_change_list.html"
-    def facturar(self, request, queryset):
-        print("-------------------")
-        print(request.POST)
-    
+
     def actualizar_con_agenda_pro(self, request, queryset):
         for payment in queryset:
-            print("-------------------")
+            # print("-------------------")
             try:
                 if payment.facturado == False:
                     getPaymentFromAgendaPro(payment.agenda_id)
@@ -74,3 +72,9 @@ class PaymentAdmin(admin.ModelAdmin):
                 return HttpResponseRedirect("/admin/payments/payment/")
         messages.success(request,'los datos de en Agenda Pro se trajeron satisfactoriamente :) ')
         return HttpResponseRedirect("/admin/payments/payment/")
+    
+    def facturar(self, request, queryset):
+        print("-------------------")
+        for payment in queryset:
+            print(payment)
+            pass
