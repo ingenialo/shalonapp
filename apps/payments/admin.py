@@ -1,11 +1,16 @@
 from django.contrib import admin
 
-# Register your models here.
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+
+
 from apps.payments.models import Payment, Transaction
 from apps.bookings.admin import BookingInline
 from apps.receipts.admin import ReceiptInline
 from apps.clients.admin import ClientsInline
 from apps.products.admin import ProductInline
+
+from apps.payments.services import getPaymentFromAgendaPro
 
 
 
@@ -58,5 +63,14 @@ class PaymentAdmin(admin.ModelAdmin):
         print(request.POST)
     
     def actualizar_con_agenda_pro(self, request, queryset):
-        print("-------------------")
-        print(request.POST)
+        for payment in queryset:
+            print("-------------------")
+            try:
+                if payment.facturado == False:
+                    getPaymentFromAgendaPro(payment.agenda_id)
+            except Exception as e:
+                print(e)
+                messages.error(request, f'No se pudo traer los datos de id {payment.id} en Agenda Pro :( ')
+                return HttpResponseRedirect("/admin/payments/payment/")
+        messages.success(request,'los datos de en Agenda Pro se trajeron satisfactoriamente :) ')
+        return HttpResponseRedirect("/admin/payments/payment/")

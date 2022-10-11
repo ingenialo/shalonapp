@@ -15,14 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.payments import views
-# from clients import views
-# from . import views
 from .views import test_celery
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('payments/', views.list_payments),
+    path('payments/', include('apps.payments.urls')),
     path('celery-test/', test_celery),
     path('siigo/', include('apps.siigos.urls'), name='siigo'),
 
