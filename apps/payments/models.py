@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 from config.utils.models import CustomBaseModel
 
+
 class Payment(CustomBaseModel):
     class Meta:
         verbose_name = _('pago')

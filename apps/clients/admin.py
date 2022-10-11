@@ -10,7 +10,7 @@ class PaymentInline(admin.TabularInline):
 
 @admin.register(Clients)
 class ClientsAdmin(admin.ModelAdmin):
-    list_display=["id","agenda_id","email","first_name","last_name", "document_type", "identification_number",'created_at','updated_at']
+    list_display=["id","agenda_id","email","first_name","last_name", "document_type", "identification_number","siigo",'created_at','updated_at']
     search_fields = ["first_name"]
     #list_filter = ['identification_number']
     inlines = [PaymentInline]

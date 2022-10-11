@@ -21,7 +21,7 @@ class Product(CustomBaseModel):
     quantity = models.IntegerField(blank=True,null=True, verbose_name=_('cantidad'))
     product = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('producto'))
     product_brand = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('marca'))
-    product_display = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('producto'))
+    product_display = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('producto nombre'))
     product_category = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('categoria'))
     product_price = models.IntegerField(blank=True,null=True, verbose_name=_('precio'))
     agenda_receipt_id = models.IntegerField(blank=True,null=True, verbose_name=_('recibo_id_agenda'))

@@ -7,6 +7,7 @@ from pprint import pprint
 from apps.company.models import Company
 from .models import DocumentType
 from apps.payments.models import Payment
+from apps.siigos.services import facturar_elctronica_by_payment_id
 
 def generate_token():
     company = Company.objects.first()
@@ -18,11 +19,11 @@ def generate_token():
     headers = {'Accept': 'application/json'}
 
     response = requests.post(url, json=payload, headers=headers)
-    pprint(response)
+    #pprint(response)
     if response.status_code == 200:
         response_json = response.json()
         access_token = response_json['access_token']
-        print(access_token)
+        #print(access_token)
         company.siigo_access_token = access_token
         company.save() 
         return access_token
@@ -204,3 +205,15 @@ def test_siigo_create_factura(request):
     response = requests.post(url, json=factura, headers=headers)
     pprint(response)
     return HttpResponse('<h1> test_siigo_create_client <span>&#128512;</span> </h1>')
+
+
+
+
+def facturar_electronica_payment(request, id_payment):
+    generate_token()
+    facturar_elctronica_by_payment_id(id_payment)
+    return HttpResponse(f'<h1> facturado pago {id_payment} <span>&#128512;</span> </h1>')
+
+
+
+
