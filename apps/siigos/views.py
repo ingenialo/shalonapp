@@ -1,7 +1,10 @@
+from datetime import datetime
+from xmlrpc.client import _datetime
 from django.http import HttpResponse,JsonResponse
 import requests
 import json
 from pprint import pprint
+
 
 
 from apps.company.models import Company
@@ -213,7 +216,6 @@ def facturar_electronica_payment(request, id_payment):
     generate_token()
     facturar_elctronica_by_payment_id(id_payment)
     return HttpResponse(f'<h1> facturado pago {id_payment} <span>&#128512;</span> </h1>')
-
 
 
 
