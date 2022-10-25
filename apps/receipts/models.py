@@ -9,4 +9,6 @@ class Receipt(CustomBaseModel):
     date = models.DateTimeField(blank=True,null=True)
     number = models.CharField(blank=True,null=True, max_length=200)
     receipt_type = models.TextField(max_length=200, blank=True,null=True)
+    def __str__(self):
+        return f'No: {self.number}'
 

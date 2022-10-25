@@ -16,7 +16,7 @@ class Product(CustomBaseModel):
         verbose_name_plural = _('productos')
     Payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True, verbose_name=_('pago'))
     Receipt = models.ForeignKey(Receipt, on_delete=models.CASCADE, null=True, verbose_name=_('recibo'))
-    price = models.IntegerField(blank=True,null=True, verbose_name=_('precio'))
+    price = models.IntegerField(blank=True,null=True, verbose_name=_('precio_con_descuento'))
     discount = models.IntegerField(blank=True,null=True, verbose_name=_('descuento'))
     quantity = models.IntegerField(blank=True,null=True, verbose_name=_('cantidad'))
     product = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('producto'))
@@ -27,3 +27,5 @@ class Product(CustomBaseModel):
     agenda_receipt_id = models.IntegerField(blank=True,null=True, verbose_name=_('recibo_id_agenda'))
     seller_details = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('detalles_vendedor'))
     
+    def __str__(self):
+        return f'{self.product}'

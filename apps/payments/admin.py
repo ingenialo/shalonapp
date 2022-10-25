@@ -40,7 +40,7 @@ class TransactionAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    inlines = [BookingInline, ProductInline, ReceiptInline, TransactionInline]
+    inlines = [BookingInline, ProductInline, TransactionInline, ReceiptInline]
     list_display = (
         'id',
         'agenda_id', 
@@ -85,8 +85,6 @@ class PaymentAdmin(admin.ModelAdmin):
     
     def facturar(self, request, queryset):
         generate_token()
-        print("-------------------")
         for payment in queryset:
-            print(payment)
             facturar_elctronica_by_payment_id(payment.id)
             pass

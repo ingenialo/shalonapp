@@ -17,12 +17,7 @@ from django.contrib.auth.models import User
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-     list_display=["price","discount","quantity","product","product_brand","product_display",'product_category','product_price', 'agenda_receipt_id', 'seller_details']
-    #  inlines = [PaymentInline]
-
-
-# Register your models here.
-
+     list_display=["id",'product_price',"discount","price","quantity","product","product_brand","product_display",'product_category', 'agenda_receipt_id', 'seller_details']
 
 class ProductInline(admin.TabularInline):
     # Product in-line 

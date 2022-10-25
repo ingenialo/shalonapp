@@ -33,7 +33,7 @@ class Clients(CustomBaseModel):
 
 def client_antes_de_guardar(sender, instance, *args, **kwargs):
     # validar si no es consumidor final. si lo es poner true
-    if not instance.identification_number or not instance.email or not instance.email:
+    if not instance.identification_number or not instance.email or not instance.address:
         instance.consumidor_final = True
     else:
         instance.consumidor_final = False
