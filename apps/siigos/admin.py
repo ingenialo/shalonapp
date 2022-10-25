@@ -4,6 +4,7 @@ from .models import DocumentType
 @admin.register(DocumentType)
 class DocumentTypeAdmin(admin.ModelAdmin):
     list_display = (
+            'id',
             'siigo_id',
             'name',
             'type',
@@ -14,3 +15,4 @@ class DocumentTypeAdmin(admin.ModelAdmin):
         )
     search_fields = []
     list_filter = []
+    change_list_template = "siigos/admin/snippets_change_list_DocumentTypeAdmin.html"

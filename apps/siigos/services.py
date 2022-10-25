@@ -288,3 +288,20 @@ def facturar_elctronica_by_payment_id(id_payment):
             print("Cedula invalida")
             save_error(payment,"cedula invalida")
     return True
+
+
+def get_payment_methods_in_siigo():
+    """
+        This function return and save the payment method
+    """
+    company = Company.objects.first()
+    url = f'{company.siigo_host}/payment-types?document_type=FV'
+    headers = {
+        'Accept': 'application/json',
+        'Authorization': company.siigo_access_token
+    }
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        response_json = response.json()
+        print(response_json)
+    return False

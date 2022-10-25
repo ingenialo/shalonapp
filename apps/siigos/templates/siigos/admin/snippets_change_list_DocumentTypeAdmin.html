@@ -1,0 +1,28 @@
+{% extends "admin/change_list.html" %}
+
+
+{% block object-tools %}
+
+    <form id="get-payments-form" method="GET" action="/siigo/get_document_type">
+        {% csrf_token %}
+        <div class="row">
+            <button class="btn btn-secondary" type="submit">
+                Traer metodos de Pagos en siigo
+                <span style="display:none" id="spinner" class="spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </button>
+        </div>
+    </form>
+    <br>
+ {{ block.super }}
+
+ <script>
+    document.getElementById('date-field').valueAsDate = new Date();
+
+    let myform = document.querySelector("#get-payments-form").onsubmit = function (event) {
+        document.getElementById("spinner").style.display = "inline-block";
+        return true;
+    }; 
+ </script>
+
+{% endblock object-tools %}
+    

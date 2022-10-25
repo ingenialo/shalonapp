@@ -1,6 +1,6 @@
 from datetime import datetime
 from xmlrpc.client import _datetime
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse,JsonResponse, HttpResponseRedirect
 import requests
 import json
 from pprint import pprint
@@ -34,7 +34,7 @@ def generate_token():
 
 
 def get_document_type(request):
-    
+    access_token = generate_token()
     company = Company.objects.first()
     url = f'{company.siigo_host}/payment-types?document_type=FV'
     headers = {
@@ -47,6 +47,7 @@ def get_document_type(request):
         response_json = response.json()
         documents_types = response_json
         # pprint(documents_types)
+        ids_db_ok = []
         for document_type in documents_types:
             
             documento ={
@@ -61,10 +62,11 @@ def get_document_type(request):
                 siigo_id=document_type['id'], 
                 defaults=documento
             )
-        return JsonResponse(response_json, safe=False)
-    elif response.status_code==401:
-        access_token = generate_token()
-        return HttpResponse(f'<h1> se regenero el token <span>&#128512;</span> </h1> <p>{access_token}</p>')
+            ids_db_ok.append(documentodb.id)
+        documentodbs_bad =DocumentType.objects.exclude(pk__in=ids_db_ok)
+        documentodbs_bad.delete()
+        #return JsonResponse(response_json, safe=False)
+        return HttpResponseRedirect("/admin/siigos/documenttype/")
     else:
         return JsonResponse(response_json)
 
