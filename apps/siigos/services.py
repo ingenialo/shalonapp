@@ -2,6 +2,7 @@ import requests
 import datetime
 from pprint import pprint
 from apps.products.models import Product
+from apps.siigos.models import DocumentType
 from apps.payments.models import Payment, Transaction
 from apps.company.models import Company
 from apps.clients.models import Clients
@@ -163,27 +164,19 @@ def facturar_electronicamente(payment, document_number):
     descuento = 0
     for transaction in transactions:
         forma_de_pago = None
-        if(transaction.payment_method=="Efectivo"):
-            forma_de_pago=3142
-        elif(transaction.payment_method=="Tarjeta de Débito" or transaction.payment_method=="Tarjeta Débito"):
-            forma_de_pago=3144
-        elif(transaction.payment_method=="Tarjeta Crédito" or transaction.payment_method=="Tarjeta de Crédito"):
-             forma_de_pago=3145
-        elif(transaction.payment_method=="Transferencia"):
-            forma_de_pago=7383
-        # elif(transaction.payment_method=="Descuento VIP"):
-        #     descuento += transaction.amount
+        document_type = DocumentType.objects.filter(name=transaction.payment_method).first()
+        if(document_type):
+            forma_de_pago=document_type.siigo_id
         else:
-            save_error(payment,f'no se encontro forma de pago: {transaction.payment_method}')
+            save_error(payment,f'no se encontro metodo de pago: {transaction.payment_method}')
             return False
         
-        if(forma_de_pago):
-            payments.append(
-                {
-                    "id": forma_de_pago, # este id es de la forma de pago
-                    "value": transaction.amount # este value es el total apagar
-                }
-            )
+        payments.append(
+            {
+                "id": forma_de_pago, # este id es de la forma de pago
+                "value": transaction.amount # este value es el total apagar
+            }
+        )
     
     center = ""
     location_name = payment.location_name
@@ -230,6 +223,7 @@ def facturar_electronicamente(payment, document_number):
         payment.comprobante_siigo = response_json["name"]
         payment.facturado=True
         payment.save()
+        return True
     elif(status_code == 400):
         errors = response_json["Errors"]
         errorestring = "creando_factura "
@@ -246,9 +240,8 @@ def facturar_electronicamente(payment, document_number):
             
             if("invalid_total_payments" in error["Code"]):
                 errorestring = f'La suma de los items no cuadra con los pagos'
-            
-
         save_error(payment, errorestring)
+        return False
 
 def facturar_elctronica_by_payment_id(id_payment):
     print("-------------------------------------------")
@@ -260,14 +253,14 @@ def facturar_elctronica_by_payment_id(id_payment):
     payment.save()
     if(payment.facturado):
         save_error(payment,"ya facturado")
-        return True
+        return False
     if(not payment.facturable_electronica):
         save_error(payment,"no facturable electronicamente")
-        return True
+        return False
 
     if(payment.client.consumidor_final):
         time.sleep(3)
-        facturar_electronicamente(payment, "222222222222")
+        return facturar_electronicamente(payment, "222222222222")
     else:
         if payment.client.identification_number:
             document_number = payment.client.identification_number
@@ -283,11 +276,11 @@ def facturar_elctronica_by_payment_id(id_payment):
             if(not exists):
                 exists = create_client_in_siigo(payment)
             if(exists):
-                facturar_electronicamente(payment, document_number)
+                return facturar_electronicamente(payment, document_number)
         else:
             print("Cedula invalida")
             save_error(payment,"cedula invalida")
-    return True
+            return False
 
 
 def get_payment_methods_in_siigo():

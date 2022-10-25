@@ -85,6 +85,18 @@ class PaymentAdmin(admin.ModelAdmin):
     
     def facturar(self, request, queryset):
         generate_token()
+        count = 0
+        count_good = 0
+        count_bad = 0
         for payment in queryset:
-            facturar_elctronica_by_payment_id(payment.id)
-            pass
+            count += 1
+            result = facturar_elctronica_by_payment_id(payment.id)
+            if(result):
+                count_good+=1 
+            else:
+                count_bad+=1
+        mensaje = f'intentos: {count}, satisfactorios: {count_good}, fallidos: {count_bad}'
+        if(count_good):
+            messages.success(request, f'{mensaje} :) ')
+        else:
+            messages.error(request, f'{mensaje} :( ')
