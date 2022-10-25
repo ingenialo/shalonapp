@@ -31,9 +31,10 @@ def validate_if_client_exists_in_siigo(document_number):
             return True
     return False
 
-def create_client_in_siigo(id_client):
+def create_client_in_siigo(payment):
+    
     # crear el cliente
-    client = Clients.objects.get(pk=id_client)
+    client = Clients.objects.get(pk=payment.client.id)
     document_number = client.identification_number.replace('.', '')
 
     company = Company.objects.first()
@@ -83,17 +84,31 @@ def create_client_in_siigo(id_client):
                 ]
     }
     pprint(payload)
-    print("response creando un cliente")
-    #response = requests.post(url, json=payload, headers=headers)
-    #pprint(response.json())
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code == 201:
+        client.siigo = True
+        client.consumidor_final = False
+        client.save()
+        return True
+    elif(response.status_code == 400):
+        response_json = response.json()
+        errors = response_json["Errors"]
+        errorestring = ""
+        for error in errors:
+            if(error["Params"]):
+                paramsstr = ""
+                for param in error["Params"]:
+                    paramsstr = f'{paramsstr}, {param}'
+            errorestring += f'codigo:{error["Code"]} mensaje:{error["Message"]}'
+            errorestring += f' parametros:({paramsstr})' if paramsstr else errorestring
+        save_error(payment, errorestring)
+    else:
+        pprint(response.json())
+
     return True
 
-def facturar_electronicamente(payment):
+def facturar_electronicamente(payment, document_number):
     print('facturando')
-
-    
-    document_number = payment.client.identification_number.replace('.', '')
-
     company = Company.objects.first()
     url = f'{company.siigo_host}/invoices'
 
@@ -165,19 +180,17 @@ def facturar_electronicamente(payment):
     print(payments)
     
     center = ""
-
-    if(payment.location_name=="Tequendama"):
+    location_name = payment.location_name
+    location_name = location_name.replace(" ","").upper()
+    if(location_name=="TEQUENDAMA"):
         center=183
-    elif(payment.location_name=="SHALON SEDE AVENTURA PLAZA"):
+    elif(location_name=="SHALONSEDEAVENTURAPLAZA"):
         center=185
-    elif(payment.location_name=="SHALON SEDE CASA SHALON"):
-            center=66
+    elif(location_name=="SHALONSEDECASASHALON"):
+        center=66
     else:
-        print('no se encontro centro de pago')
+        save_error(payment, "error en ubicacion")
     
-    print("centro de pagooooooooooooo ")
-    print(center)
-
     factura = {
                 "document": {
                     "id": 13643
@@ -203,18 +216,36 @@ def facturar_electronicamente(payment):
    
     response = requests.post(url, json=factura, headers=headers)
     print("-----line 205----------")
-    if response.status_code == 200:
+    print(response.status_code)
+    if response.status_code == 201:
         response_json = response.json()
         print("ooookkkkkkk")
         pprint(response_json)
+        payment.comprobante_siigo = response_json["name"]
         payment.facturado=True
         payment.save()
+    elif(response.status_code == 400):
+        response_json = response.json()
+        errors = response_json["Errors"]
+        errorestring = ""
+        for error in errors:
+            if(error["Params"]):
+                paramsstr = ""
+                for param in error["Params"]:
+                    paramsstr = f'{paramsstr}, {param}'
+            errorestring += f'codigo:{error["Code"]} mensaje:{error["Message"]}'
+            errorestring += f' parametros:({paramsstr})' if paramsstr else errorestring
+        save_error(payment, errorestring)
+        print(errorestring)
+
     else:
         pprint(response.json())
 
 
 def facturar_elctronica_by_payment_id(id_payment):
     payment = Payment.objects.get(pk=id_payment)
+    payment.errores = ""
+    payment.save()
     if(payment.facturado):
         save_error(payment,"ya facturado")
         return True
@@ -223,29 +254,36 @@ def facturar_elctronica_by_payment_id(id_payment):
         return True
 
     print(f'facturando ....... {id_payment}')
-    document_number = payment.client.identification_number
-    document_number = document_number.replace('.', '')
-    try:
-        document_number = int(document_number)
-    except Exception as e:
-        print(e)
-        document_number = None
-    if(document_number):
-        print(f'cliente numero documento {document_number}')
-        exists = validate_if_client_exists_in_siigo(document_number)
-        if(exists):
-            print("el cliente existe")
-            # to do: update the client
-        else:
-            print("el cliente no existe")
-            create_client_in_siigo(payment.client.id)
-        print("chupar pijas")
-        facturar_electronicamente(payment)
+    document_number = ""
 
+    
+    if(payment.client.consumidor_final):
+        facturar_electronicamente(payment, "222222222222")
     else:
-        print("no lo hace")
-        save_error(payment,"cedula invalida")
-        
+        if payment.client.identification_number:
+            document_number = payment.client.identification_number
+            document_number = document_number.replace('.', '')
+        try:
+            document_number = int(document_number)
+        except Exception as e:
+            print(e)
+            document_number = None
+        if(document_number):
+            exists = validate_if_client_exists_in_siigo(document_number)
+
+            if(exists):
+                print("el cliente existe")
+                # to do: update the client
+            else:
+                print("el cliente no existe")
+                create_client_in_siigo(payment)
+
+            facturar_electronicamente(payment, document_number)
+        else:
+            print("Cedula invalida")
+            save_error(payment,"cedula invalida")
+
+    
     
     
     

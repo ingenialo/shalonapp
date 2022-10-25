@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
+from apps.siigos.views import generate_token
+from apps.siigos.services import facturar_elctronica_by_payment_id
 
 from apps.payments.models import Payment, Transaction
 from apps.bookings.admin import BookingInline
@@ -44,21 +46,29 @@ class PaymentAdmin(admin.ModelAdmin):
         'agenda_id', 
         'payment_date', 
         'location_name', 
-        'client',
+        'cliente',
         'amount', 
         'facturado',
+        "factura",
         'facturable_electronica',
         'errores',
         )
     # list_display_links = ('pk')
     # list_editable = ('phone_number', 'website', 'picture')
     # search_fields = ["client"]
-    list_filter = ['location_name','facturado','payment_date']
+    list_filter = ['location_name','facturado','facturable_electronica','payment_date']
     date_hierarchy = 'payment_date'
     ordering=["-payment_date"]
     actions = ['facturar', 'actualizar_con_agenda_pro']
     save_on_top = True
     change_list_template = "payments/admin/snippets_change_list.html"
+
+    def cliente(self, obj):
+        tipo_client = "✅" if not obj.client.consumidor_final else "❌"
+        return f'{tipo_client} {obj.client.first_name} {obj.client.last_name}'
+    
+    def factura(self, obj):
+        return obj.comprobante_siigo
 
     def actualizar_con_agenda_pro(self, request, queryset):
         for payment in queryset:
@@ -74,7 +84,9 @@ class PaymentAdmin(admin.ModelAdmin):
         return HttpResponseRedirect("/admin/payments/payment/")
     
     def facturar(self, request, queryset):
+        generate_token()
         print("-------------------")
         for payment in queryset:
             print(payment)
+            facturar_elctronica_by_payment_id(payment.id)
             pass

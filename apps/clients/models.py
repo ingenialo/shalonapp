@@ -1,5 +1,6 @@
 from django.db import models
 from config.utils.models import CustomBaseModel
+from django.db.models.signals import pre_save
 
 from django.utils.translation import gettext_lazy as _
 
@@ -24,8 +25,17 @@ class Clients(CustomBaseModel):
     district = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('distrito'))
     city = models.CharField(max_length=200 ,blank=True,null=True, verbose_name=_('ciudad'))
     siigo = models.BooleanField(default=False)
+    consumidor_final = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
-# Create your models here.
+
+def client_antes_de_guardar(sender, instance, *args, **kwargs):
+    # validar si no es consumidor final. si lo es poner true
+    if not instance.identification_number or not instance.email or not instance.email:
+        instance.consumidor_final = True
+    else:
+        instance.consumidor_final = False
+
+pre_save.connect(client_antes_de_guardar, sender=Clients)
