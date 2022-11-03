@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
     image: shalonapp_django
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     env_file:
       - ./.env
     volumes:
@@ -15,6 +17,7 @@ services:
     expose:
       - "3306"
     command: python manage.py runserver 0.0.0.0:8000
+
 
   redis:
     image: redis:3.2
