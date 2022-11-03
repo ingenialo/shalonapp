@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-
+import environ
 from pathlib import Path
+ROOT_DIR = environ.Path(__file__) - 3
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = os.getenv('APP_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["app.shalonlashborws.com", "192.241.153.210"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "app.shalonlashborws.com", "192.241.153.210"]
 
 
 # Application definition
@@ -154,4 +155,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERYD_TASK_TIME_LIMIT = 5 * 60
 CELERYD_TASK_SOFT_TIME_LIMIT = 60
 
-STATIC_ROOT = [os.path.join(BASE_DIR.parent, 'static-root')],
+STATIC_ROOT = str(ROOT_DIR('static-root'))
+
+print("STATIC_ROOTs")
+print(STATIC_ROOT)

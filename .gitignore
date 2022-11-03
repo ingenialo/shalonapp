@@ -101,6 +101,10 @@ env/
 venv/
 ENV/
 
+#static root
+static-root/
+media-root/
+
 # Spyder project settings
 .spyderproject
 .spyproject
