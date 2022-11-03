@@ -68,6 +68,8 @@ def get_document_type(request):
         #return JsonResponse(response_json, safe=False)
         return HttpResponseRedirect("/admin/siigos/documenttype/")
     else:
+        print(response)
+        response_json = response.json()
         return JsonResponse(response_json)
 
 
