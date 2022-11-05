@@ -1,9 +1,15 @@
 {% extends "admin/base.html" %}
+{% load i18n static %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
+{% block extrastyle %}
+     <link rel="stylesheet" type="text/css" href="{% static 'css/admin_color.css' %}"/>
+{% endblock %}
+
 {% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">Shalon Admin</a></h1>
+
+<h1 id="site-name"><a href="{% url 'admin:index' %}"> <img height="50" src="{% static 'images/Logo-Shalon.png' %}" alt=""></a></h1>
 {% endblock %}
 
 {% block extrahead %}

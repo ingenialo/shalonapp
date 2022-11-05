@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import test_celery
+from .views import home
 
 urlpatterns = [
+    path('', admin.site.urls),
     path('admin/', admin.site.urls),
     path('payments/', include('apps.payments.urls')),
     path('celery-test/', test_celery),

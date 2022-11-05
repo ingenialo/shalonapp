@@ -134,6 +134,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = str(ROOT_DIR('static-root'))
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR.parent, 'statics')
+]
+
+print(STATICFILES_DIRS)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -153,8 +159,3 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERYD_TASK_TIME_LIMIT = 5 * 60
 CELERYD_TASK_SOFT_TIME_LIMIT = 60
-
-STATIC_ROOT = str(ROOT_DIR('static-root'))
-
-print("STATIC_ROOTs")
-print(STATIC_ROOT)

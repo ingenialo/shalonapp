@@ -1,6 +1,7 @@
 # Django
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 # Tasks
 from apps.taskapp.tasks import test_task
@@ -9,3 +10,6 @@ from apps.taskapp.tasks import test_task
 def test_celery(request):
     test_task.delay()
     return HttpResponse("task executed correctly!")
+
+def home(request):
+    return HttpResponseRedirect("/admin")
