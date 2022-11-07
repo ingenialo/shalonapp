@@ -109,6 +109,9 @@ def create_client_in_siigo(payment):
 
     return False
 
+def myFuncToSort(e):
+    return e["price"]
+
 def facturar_electronicamente(payment, document_number):
     print('facturando...')
     company = Company.objects.first()
@@ -162,14 +165,34 @@ def facturar_electronicamente(payment, document_number):
 
     payments = []
     descuento = 0
+    #import ipdb;ipdb.set_trace()
     for transaction in transactions:
         forma_de_pago = None
+        is_descuento = False
+        method_upp = transaction.payment_method.upper()
+        if ("DESCUENTO" in method_upp or "BONO" in method_upp or "CANJE" in method_upp):
+            is_descuento=True
+            idx=0
+            while(transaction.amount):
+                original_price = items[idx]["price"]
+                items[idx]["price"] = items[idx]["price"] - transaction.amount
+                if(items[idx]["price"] == 0):
+                    items.pop(idx)
+                    break
+                elif(items[idx]["price"] < 0):
+                    transaction.amount = items[idx]["price"] * (-1)
+                    items.pop(idx)
+                else:
+                    # if is major to 0
+                    break
+
         document_type = DocumentType.objects.filter(name=transaction.payment_method).first()
         if(document_type):
             forma_de_pago=document_type.siigo_id
         else:
-            save_error(payment,f'no se encontro metodo de pago: {transaction.payment_method}')
-            return False
+            if(not is_descuento):
+                save_error(payment,f'no se encontro metodo de pago: {transaction.payment_method}')
+                return False
         
         payments.append(
             {

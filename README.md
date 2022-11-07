@@ -29,3 +29,25 @@ example:
 
 - How to get in to the container by ssh
 ``` docker-compose exec django /bin/sh ```
+
+
+Tareas Andres:
+- Poner el valor neto incluido el descuento y poner descuento 0 siempre en el campo.
+- Actualizar el cliente en siigo si existe cada que descargue la compra.
+- Los items facturables deben ser que tengan pagos con tarjeta que tenga al menos sume 189.000.
+- Terminar de subir el servidor
+
+
+Tareas Yina
+- Crear metodo de pago bono de regalo en siigo
+- Definir los porcentajes de esos descuentos que se aplicaban como metodos de pagos segun estos items 
+    - Descuento incentivo Tq
+    - Descuento vip
+    - canje
+- Socializar tabla de porcentajes segun descuento
+- Eliminar metodos de pago relacionados con descuento, el descuento se debe poner como un porcentage no como un metodo de pago
+
+
+
+
+recorrer los items, ordenar de mayor a menor y descontar del menor a mayor segun descuento
