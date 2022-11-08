@@ -157,7 +157,7 @@ def facturar_electronicamente(payment, document_number):
             save_error(payment,f'item: sin nombre')
             return False
         if len(item["code"]) > 30 :
-            save_error(payment,f'item: "${item["code"]}" no puede tener mas de 30 caracteres')
+            save_error(payment,f'item: "{item["code"]}" no puede tener mas de 30 caracteres')
             return False
         if not item["price"]:
             save_error(payment,f'item: {item["code"]} sin precio')
