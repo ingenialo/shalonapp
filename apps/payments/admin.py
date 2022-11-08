@@ -7,7 +7,7 @@ from apps.siigos.views import generate_token
 from apps.siigos.services import facturar_elctronica_by_payment_id
 
 from apps.payments.models import Payment, Transaction
-from apps.bookings.admin import BookingInline, MockBookingInline
+from apps.bookings.admin import BookingInline
 from apps.receipts.admin import ReceiptInline
 from apps.clients.admin import ClientsInline
 from apps.products.admin import ProductInline
@@ -40,7 +40,7 @@ class TransactionAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    inlines = [BookingInline, MockBookingInline, ProductInline, TransactionInline, ReceiptInline]
+    inlines = [BookingInline, ProductInline, TransactionInline, ReceiptInline]
     list_display = (
         'id',
         'agenda_id', 
