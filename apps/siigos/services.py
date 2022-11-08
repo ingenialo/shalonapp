@@ -156,6 +156,9 @@ def facturar_electronicamente(payment, document_number):
         if not item["code"]:
             save_error(payment,f'item: sin nombre')
             return False
+        if len(item["code"]>30):
+            save_error(payment,f'item: "${item["code"]}" no puede tener mas de 30 caracteres')
+            return False
         if not item["price"]:
             save_error(payment,f'item: {item["code"]} sin precio')
             return False
@@ -193,13 +196,13 @@ def facturar_electronicamente(payment, document_number):
             if(not is_descuento):
                 save_error(payment,f'no se encontro metodo de pago: {transaction.payment_method}')
                 return False
-        
-        payments.append(
-            {
-                "id": forma_de_pago, # este id es de la forma de pago
-                "value": transaction.amount # este value es el total apagar
-            }
-        )
+        if(not is_descuento):
+            payments.append(
+                {
+                    "id": forma_de_pago, # este id es de la forma de pago
+                    "value": transaction.amount # este value es el total apagar
+                }
+            )
     
     center = ""
     location_name = payment.location_name
@@ -263,6 +266,11 @@ def facturar_electronicamente(payment, document_number):
             
             if("invalid_total_payments" in error["Code"]):
                 errorestring = f'La suma de los items no cuadra con los pagos'
+            
+            if("duplicated_document" in error["Code"]):
+                errorestringbefore = errorestring
+                errorestring = f'no puedes crear tantas facturas a la ves al cliente {document_number}, intenta de uno en uno ||| {errorestringbefore}'
+            
         save_error(payment, errorestring)
         return False
 
