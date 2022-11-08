@@ -127,7 +127,7 @@ def facturar_electronicamente(payment, document_number):
     products = Product.objects.filter(Payment=payment)
     transactions = Transaction.objects.filter(Payment=payment)
     fecha_actual = datetime.datetime.now ()
-    date = datetime.datetime.strftime(fecha_actual, '%Y-%m-%d')
+    date = datetime.datetime.strftime(payment.payment_date, '%Y-%m-%d')
 
     items = []
     for booking in bookings:
