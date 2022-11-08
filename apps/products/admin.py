@@ -23,4 +23,4 @@ class ProductInline(admin.TabularInline):
     # Product in-line 
     model = Product
     can_delete = False
-    verbose_name_plural = 'products'
+    verbose_name_plural = 'productos'

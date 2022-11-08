@@ -19,7 +19,7 @@ class Payment(CustomBaseModel):
     change_amount = models.IntegerField(blank=True,null=True, verbose_name=_('monto cambio'))
     employee_code_id = models.IntegerField(blank=True,null=True, verbose_name=_('monto empleado'))
     employee_code_name = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('empleado codigo_nombre'))
-    client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE)
+    client = models.ForeignKey('clients.Clients', on_delete=models.CASCADE, verbose_name=_('cliente'))
     facturado = models.BooleanField(default=False)
     facturable_electronica = models.BooleanField(default=False)
     comprobante_siigo = models.CharField(max_length=200, blank=True,null=True)

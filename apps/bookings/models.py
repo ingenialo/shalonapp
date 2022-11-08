@@ -25,11 +25,13 @@ class Booking(CustomBaseModel):
     start = models.DateTimeField(blank=True,null=True, verbose_name=_('inicio'))
     end = models.DateTimeField(blank=True,null=True, verbose_name=_('fin'))
     
-# class MockBooking (CustomBaseModel):
-     
-#       price = models.IntegerField(blank=True,null=True)
-#       discount = models.IntegerField(blank=True,null=True)
-#       service = models.CharField(max_length=200, blank=True,null=True)
-#       provider = models.CharField(max_length=200, blank=True,null=True)
-#       agenda_id = models.IntegerField(blank=True,null=True, unique=True)
-    
+class MockBooking (CustomBaseModel):
+    class Meta:
+        verbose_name = _('reserva_simulada')
+        verbose_name_plural = _('reservas_simuladas')
+    Payment = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True, verbose_name=_('pago'))
+    price = models.IntegerField(blank=True,null=True, verbose_name=_('precio'))
+    discount = models.IntegerField(blank=True,null=True, verbose_name=_('descuento'))
+    service = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('servicio'))
+    provider = models.CharField(max_length=200, blank=True,null=True, verbose_name=_('proveedor'))
+    Receipt = models.ForeignKey(Receipt, on_delete=models.CASCADE, null=True, verbose_name=_('recibo'))

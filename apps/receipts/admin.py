@@ -46,7 +46,7 @@ class ReceiptInline(admin.TabularInline):
     # Receipt in-line 
     model = Receipt
     can_delete = False
-    verbose_name_plural = 'receipts'
+    verbose_name_plural = 'recibos'
     
     
     # list_display_links = ('pk')

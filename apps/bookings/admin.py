@@ -2,7 +2,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib import admin
 from django.db import models
 
-from apps.bookings.models import Booking
+from apps.bookings.models import Booking, MockBooking
 from django.contrib.auth.models import User
 
 
@@ -32,8 +32,31 @@ class BookingAdmin(admin.ModelAdmin):
         'updated_at'
         )
 
+@admin.register(MockBooking)
+class MockBookingAdmin(admin.ModelAdmin):
+
+
+# Register your models here.
+    list_display = (
+        'pk', 
+        'price',
+        'discount',
+        'service',
+        'provider',
+        'Payment',
+        'created_at',
+        'updated_at'
+        )
+
 class BookingInline(admin.TabularInline):
     # Booking in-line 
     model = Booking
     can_delete = False
-    verbose_name_plural = 'bookings'
+    verbose_name_plural = 'reservas'
+
+class MockBookingInline(admin.TabularInline):
+    # Booking in-line 
+    model = MockBooking
+    can_delete = False
+    verbose_name_plural = 'reservas_simuladas'
+
