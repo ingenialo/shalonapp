@@ -19,7 +19,7 @@ from apps.payments.services import getPaymentFromAgendaPro
 class TransactionInline(admin.TabularInline):
     # Product in-line 
     model = Transaction
-    can_delete = False
+    can_delete = True
     verbose_name_plural = 'transacciones'
 
 @admin.register(Transaction)

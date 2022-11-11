@@ -35,5 +35,5 @@ class BookingAdmin(admin.ModelAdmin):
 class BookingInline(admin.TabularInline):
     # Booking in-line 
     model = Booking
-    can_delete = False
+    can_delete = True
     verbose_name_plural = 'reservas'

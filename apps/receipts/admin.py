@@ -45,7 +45,7 @@ class ReceiptAdmin(admin.ModelAdmin):
 class ReceiptInline(admin.TabularInline):
     # Receipt in-line 
     model = Receipt
-    can_delete = False
+    can_delete = True
     verbose_name_plural = 'recibos'
     
     
