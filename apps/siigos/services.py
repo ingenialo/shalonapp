@@ -142,13 +142,16 @@ def facturar_electronicamente(payment, document_number):
                 "discount": booking.discount if booking.discount else 0,
             }
         )
+    # nota: no se debe iterar mock booking por que ya se guardan los mock booking dentro de la tabla booking ver apps/payments/services.py linea 106
     for product in products:
         items.append(
             {
                 "code": product.product.replace(' ', ''), # nombre del producto
                 "quantity": product.quantity,
-                "price": product.product_price,
-                "discount": product.discount if product.discount else 0,
+                "price": product.price,#precio incluido el descuento
+                "discount": 0,#el precio se pone como 0 por que esta incluido el descuento
+                # "price": product.product_price,#precio sin descuento
+                # "discount": product.discount if product.discount else 0,
             }
         )
     
