@@ -78,6 +78,7 @@ class PaymentAdmin(admin.ModelAdmin):
                 messages.error(request, f'No se pudo traer los datos de id {obj.id} en Agenda Pro :( ')
             return HttpResponseRedirect(".")
         elif "_siigo-facturar" in request.POST:
+            generate_token()
             if obj.facturado == False:
                 result = facturar_elctronica_by_payment_id(obj.id)
                 if(result):
