@@ -78,18 +78,14 @@ class PaymentAdmin(admin.ModelAdmin):
                 messages.error(request, f'No se pudo traer los datos de id {obj.id} en Agenda Pro :( ')
             return HttpResponseRedirect(".")
         elif "_siigo-facturar" in request.POST:
-            try:
-                if obj.facturado == False:
-                    result = facturar_elctronica_by_payment_id(obj.id)
-                    if(result):
-                        messages.success(request, f'se facturo en Siigo satisfactoriamente :) ')
-                    else:
-                        messages.error(request, f'No se pudo facturar :( ')
+            if obj.facturado == False:
+                result = facturar_elctronica_by_payment_id(obj.id)
+                if(result):
+                    messages.success(request, f'se facturo en Siigo satisfactoriamente :) ')
                 else:
-                    messages.error(request, f'No se puede facturar por que este pago ya esta facturado :( ')
-            except Exception as e:
-                print(e)
-                messages.error(request, f'algo salio mal, intente de nuevo :( ')
+                    messages.error(request, f'No se pudo facturar :( ')
+            else:
+                messages.error(request, f'No se puede facturar por que este pago ya esta facturado :( ')
             return HttpResponseRedirect(".")
         else:
             return super().response_change(request, obj)
