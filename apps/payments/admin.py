@@ -62,6 +62,37 @@ class PaymentAdmin(admin.ModelAdmin):
     actions = ['facturar', 'actualizar_con_agenda_pro']
     save_on_top = True
     change_list_template = "payments/admin/snippets_change_list.html"
+    change_form_template = "payments/admin/snippets_changeform.html"
+
+    def response_change(self, request, obj):
+        """ This method catch the custom button in the update template"""
+        if "_get-agendapro" in request.POST:
+            try:
+                if obj.facturado == False:
+                    getPaymentFromAgendaPro(obj.agenda_id)
+                    messages.success(request, f'se acualizo con Agenda Pro satisfactoriamente :) ')
+                else:
+                    messages.error(request, f'No se pudo traer los datos de Agenda Pro por que este pago ya esta facturado :( ')
+            except Exception as e:
+                print(e)
+                messages.error(request, f'No se pudo traer los datos de id {obj.id} en Agenda Pro :( ')
+            return HttpResponseRedirect(".")
+        elif "_siigo-facturar" in request.POST:
+            try:
+                if obj.facturado == False:
+                    result = facturar_elctronica_by_payment_id(obj.id)
+                    if(result):
+                        messages.success(request, f'se facturo en Siigo satisfactoriamente :) ')
+                    else:
+                        messages.error(request, f'No se pudo facturar :( ')
+                else:
+                    messages.error(request, f'No se puede facturar por que este pago ya esta facturado :( ')
+            except Exception as e:
+                print(e)
+                messages.error(request, f'algo salio mal, intente de nuevo :( ')
+            return HttpResponseRedirect(".")
+        else:
+            return super().response_change(request, obj)
 
     def cliente(self, obj):
         tipo_client = "✅" if not obj.client.consumidor_final else "❌"

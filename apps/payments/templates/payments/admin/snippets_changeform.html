@@ -1,0 +1,9 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_top %}
+    {{ block.super }}
+    <div class="submit-row">
+        <input type="submit" value="⬇️ Actualizar con agenda pro" name="_get-agendapro">
+        <input type="submit" value="⬆️ Facturar en siigo" name="_siigo-facturar">
+    </div>
+{% endblock %}
