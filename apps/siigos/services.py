@@ -139,7 +139,8 @@ def facturar_electronicamente(payment, document_number):
                 "code": booking.service.replace(' ', ''),# nombre del servicio
                 "quantity": 1,
                 "price": price,
-                "discount": booking.discount if booking.discount else 0,
+                #"discount": booking.discount if booking.discount else 0,
+                "discount": 0,
             }
         )
     # nota: no se debe iterar mock booking por que ya se guardan los mock booking dentro de la tabla booking ver apps/payments/services.py linea 106
