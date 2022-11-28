@@ -132,8 +132,9 @@ def facturar_electronicamente(payment, document_number):
     items = []
     for booking in bookings:
         discount = float(booking.discount) if booking.discount else 0
-        percentaje_with_discount = 100-discount
-        price = booking.price*100/percentaje_with_discount
+        # percentaje_with_discount = 100-discount
+        # price = booking.price*100/percentaje_with_discount
+        price = booking.price
         items.append(
             {
                 "code": booking.service.replace(' ', ''),# nombre del servicio
