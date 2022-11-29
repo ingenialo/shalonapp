@@ -17,7 +17,7 @@ from apps.payments.models import Transaction
 from config.utils.models import update_model
 
 def conv(value):
-    if value:
+    if value or value == 0:
         return value
     else:
         return None
