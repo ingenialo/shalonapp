@@ -1,8 +1,6 @@
 # Celery
 from apps.taskapp.celery import app
-
-# Utilities
-from datetime import timedelta, timezone
+from celery.schedules import crontab
 
 import time
 
@@ -12,8 +10,10 @@ def test_task():
         time.sleep(1)
         print("sleeping", str(i+1))
 
-# @periodic_task(name='get_agenda_pro_payments', run_every=timedelta(seconds=5))
-# def get_agenda_pro_payments():
-#     """get_agenda_pro_payments"""
-#     now = timezone.now()
-#     print(now)
+
+app.conf.beat_schedule = {
+    'add-every-5-seconds': {
+        'task': 'get_agenda_pro_payments_for_today',
+        'schedule': crontab(hour=5, minute=30),
+    },
+}

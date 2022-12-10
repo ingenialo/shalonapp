@@ -151,7 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # INSTALLED_APPS += ['django_celery_results']
 INSTALLED_APPS += ['apps.taskapp.celery.CeleryAppConfig']
 if USE_TZ:
-    CELERY_TIMEZONE = TIME_ZONE
+    # CELERY_TIMEZONE = TIME_ZONE
+    CELERY_TIMEZONE = 'America/Bogota'
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 CELERY_ACCEPT_CONTENT = ['json']
